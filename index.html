@@ -142,57 +142,67 @@
   </section>
 
   <!-- ================= PLANS ================= -->
-  <section id="plans" class="section">
-    <div class="container">
-      <h2 class="h2">Choose your plan</h2>
-      <p class="muted">Simple monthly plans. Cancel or upgrade anytime.</p>
+<section class="pricing" style="background-color:#0b0f14; padding:80px 20px; font-family:Inter,sans-serif;">
+  <div style="max-width:1200px; margin:auto; text-align:center;">
+    <h2 style="font-size:2.5rem; margin-bottom:10px; color:white;">Choose Your Plan</h2>
+    <p style="color:#9ca3af; margin-bottom:60px;">Automate your leads, chatbots & outreach with Bravon</p>
 
-      <div class="grid grid-3 pricing">
-        <!-- Launch -->
-        <div class="card price">
-          <div class="card-icon">🚀</div>
-          <h3 class="card-title">Launch</h3>
-          <p class="price-tag">€499 <span>/ month</span></p>
-          <ul class="list">
-            <li>Website widget (1 domain)</li>
-            <li>Basic FAQ & lead form</li>
-            <li>Calendar booking</li>
-            <li>Weekly recap</li>
-          </ul>
-          <a class="btn btn-primary" href="#light">Start now</a>
-        </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px;">
 
-        <!-- Growth -->
-        <div class="card price price-popular">
-          <div class="badge">Growth Popular</div>
-          <div class="card-icon">🌱</div>
-          <h3 class="card-title">Growth</h3>
-          <p class="price-tag">€999 <span>/ month</span></p>
-          <ul class="list">
-            <li>Multi-channel follow-ups</li>
-            <li>HubSpot / Pipedrive sync</li>
-            <li>Playbooks & scoring</li>
-            <li>Bi-weekly optimization</li>
-          </ul>
-          <a class="btn btn-primary" href="#light">Grow with us</a>
-        </div>
+      <!-- Launch Plan -->
+      <div style="background:#111827; border:1px solid #1f2937; padding:40px; border-radius:16px; box-shadow:0 0 10px rgba(0,0,0,0.4);">
+        <h3 style="font-size:1.5rem; margin-bottom:10px; color:white;">🚀 Launch</h3>
+        <p style="font-size:2rem; font-weight:bold; color:white;">€499 <span style="font-size:1rem; font-weight:normal; color:#9ca3af;">/month</span></p>
+        <ul style="list-style:none; padding:0; margin:20px 0; color:#d1d5db; text-align:left;">
+          <li>AI lead processing</li>
+          <li>Website chatbot (1 domain)</li>
+          <li>WhatsApp integration (basic)</li>
+          <li>LinkedIn automation (basic)</li>
+          <li>Email follow-ups</li>
+          <li>Basic lead dashboard</li>
+        </ul>
+        <a href="https://checkout.stripe.com/pay/launch" 
+           style="display:block; background:#3b82f6; color:white; padding:12px 0; border-radius:8px; text-decoration:none; font-weight:bold;">
+          Start now
+        </a>
+      </div>
 
-        <!-- Scale -->
-        <div class="card price">
-          <div class="card-icon">🏆</div>
-          <h3 class="card-title">Scale</h3>
-          <p class="price-tag">€1499 <span>/ month</span></p>
-          <ul class="list">
-            <li>All channels + sequences</li>
-            <li>Custom workflows & tags</li>
-            <li>Priority support</li>
-            <li>Detailed reporting</li>
-          </ul>
-          <a class="btn btn-primary" href="#light">Scale now</a>
-        </div>
+      <!-- Growth Plan -->
+      <div style="background:#1e293b; border:2px solid #3b82f6; padding:40px; border-radius:16px; box-shadow:0 0 15px rgba(59,130,246,0.5);">
+        <h3 style="font-size:1.5rem; margin-bottom:10px; color:white;">🌱 Growth <span style="color:#3b82f6; font-size:0.9rem;">(Most Popular)</span></h3>
+        <p style="font-size:2rem; font-weight:bold; color:white;">€999 <span style="font-size:1rem; font-weight:normal; color:#9ca3af;">/month</span></p>
+        <ul style="list-style:none; padding:0; margin:20px 0; color:#d1d5db; text-align:left;">
+          <li>Everything in Launch +</li>
+          <li>Advanced AI lead processing</li>
+          <li>Multi-channel WhatsApp & LinkedIn outreach</li>
+          <li>Automated follow-ups</li>
+          <li>Custom dashboard integration</li>
+        </ul>
+        <a href="https://checkout.stripe.com/pay/growth" 
+           style="display:block; background:#3b82f6; color:white; padding:12px 0; border-radius:8px; text-decoration:none; font-weight:bold;">
+          Grow with us
+        </a>
+      </div>
+
+      <!-- Scale Plan -->
+      <div style="background:#111827; border:1px solid #1f2937; padding:40px; border-radius:16px; box-shadow:0 0 10px rgba(0,0,0,0.4);">
+        <h3 style="font-size:1.5rem; margin-bottom:10px; color:white;">🏆 Scale</h3>
+        <p style="font-size:2rem; font-weight:bold; color:white;">€1499 <span style="font-size:1rem; font-weight:normal; color:#9ca3af;">/month</span></p>
+        <ul style="list-style:none; padding:0; margin:20px 0; color:#d1d5db; text-align:left;">
+          <li>Everything in Growth +</li>
+          <li>Full WhatsApp + LinkedIn automation</li>
+          <li>Custom lead routing & tagging</li>
+          <li>API integration with existing tools</li>
+          <li>Dedicated priority support</li>
+        </ul>
+        <a href="https://checkout.stripe.com/pay/scale" 
+           style="display:block; background:#3b82f6; color:white; padding:12px 0; border-radius:8px; text-decoration:none; font-weight:bold;">
+          Scale now
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ================= CTA STRIP (no "Book Intro") ================= -->
   <section id="book" class="cta-strip">
@@ -275,6 +285,22 @@
       out.hidden = false;
     });
   </script>
+<script>
+  // Stripe-Links einfügen
+  const CHECKOUT = {
+    launch: "https://buy.stripe.com/test_14A4gA0ijeeeeVrc5RgrS02",
+    growth: "https://buy.stripe.com/test_fZu14o6GHfiicNjfi3grS01",
+    scale:  "https://buy.stripe.com/test_14A14oc115HIeVrd9VgrS00"
+  };
+
+  // Klick-Handler für Buttons
+  document.querySelectorAll('.plan-cta').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const plan = btn.getAttribute('data-plan');
+      window.location.href = CHECKOUT[plan];
+    });
+  });
+</script>
 </body>
 </html>
 
