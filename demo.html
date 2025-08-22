@@ -196,5 +196,14 @@
   <input type="text" name="name" />
   <input type="email" name="email" />
 </form>
+<script>
+  (function () {
+    var f = document.forms['bravon-demo'];
+    if (!f) return;
+    f.addEventListener('submit', function () {
+      if (window.plausible) plausible('DemoSubmitted');
+    });
+  })();
+</script>
 </body>
 </html>
