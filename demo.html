@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bravon – Free Light Demo</title>
+  <meta name="description" content="Spin up a free light demo of your Bravon AI agent. No code, 60 seconds." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+</head>
+<body class="bg-gray-950 text-white">
+  <!-- NAV (minimal) -->
+  <header class="nav w-full border-b border-gray-800">
+    <div class="container nav-inner" style="max-width:1200px;margin:auto;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="/" class="text-xl font-bold text-white hover:text-blue-300" style="text-decoration:none;">Bravon AI</a>
+      <nav class="nav_links" style="display:flex;gap:20px;">
+        <a href="/#benefits" class="hover:text-white text-gray-400">Benefits</a>
+        <a href="/#what-we-handle" class="hover:text-white text-gray-400">What we handle</a>
+        <a href="/#plans" class="hover:text-white text-gray-400">Plans</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#plans" style="padding:10px 16px;background:#60a5fa;border-radius:8px;color:#0b1220;text-decoration:none;font-weight:700;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="padding:60px 20px 24px;max-width:1200px;margin:auto;">
+    <p class="eyebrow" style="letter-spacing:.12em;color:#9ca3af;text-transform:uppercase;font-weight:700">Try the Light Version</p>
+    <h1 class="h1" style="font-size:44px;line-height:1.1;margin:14px 0 10px;">Spin up your <span style="color:#93c5fd">free AI agent demo</span> in 60 seconds</h1>
+    <p class="sub" style="color:#a1a1aa;max-width:760px">We’ll show you how Bravon qualifies leads and books meetings. No code. No risk.</p>
+  </section>
+
+  <!-- MAIN: two columns -->
+  <main style="max-width:1200px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;padding:0 20px 80px;">
+    <!-- Left: Netlify Form -->
+    <section aria-labelledby="demo-form">
+      <div style="background:#0f172a;border:1px solid #1f2937;border-radius:16px;padding:22px;">
+        <h2 id="demo-form" style="font-size:22px;margin:0 0 10px;">Set up your demo</h2>
+        <p style="color:#9aa4b2;margin:0 0 18px;">Tell us a bit about your business. We’ll configure the light agent and email you the link.</p>
+
+        <!-- Netlify Form -->
+        <form name="bravon-demo" method="POST" data-netlify="true" action="/thanks.html" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="bravon-demo" />
+          <input type="hidden" name="source" value="demo-page" />
+          <p style="display:none;">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <label style="display:flex;flex-direction:column;gap:8px;">
+              <span>Name</span>
+              <input required name="name" type="text" placeholder="Jane Doe" style="background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;">
+              <span>Email</span>
+              <input required name="email" type="email" placeholder="jane@company.com" style="background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff;">
+            </label>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
+            <label style="display:flex;flex-direction:column;gap:8px;">
+              <span>Company</span>
+              <input name="company" type="text" placeholder="Acme GmbH" style="background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;">
+              <span>Website</span>
+              <input name="website" type="url" placeholder="https://…" style="background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff;">
+            </label>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
+            <label style="display:flex;flex-direction:column;gap:8px;">
+              <span>Primary goal</span>
+              <select name="goal" style="background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff;">
+                <option>More qualified demos</option>
+                <option>Inbound lead triage</option>
+                <option>Funnel follow-ups</option>
+                <option>Faster response time</option>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;">
+              <span>Vertical</span>
+              <select name="vertical" style="background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff;">
+                <option>SaaS</option>
+                <option>Services</option>
+                <option>E-commerce</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset style="margin-top:16px;border:1px solid #1f2937;border-radius:12px;padding:14px;">
+            <legend style="padding:0 8px;color:#9aa4b2;">Channels</legend>
+            <label style="display:inline-flex;gap:8px;align-items:center;margin-right:16px;">
+              <input type="checkbox" name="channel" value="Website Chat" checked /> Website Chat
+            </label>
+            <label style="display:inline-flex;gap:8px;align-items:center;margin-right:16px;">
+              <input type="checkbox" name="channel" value="WhatsApp" /> WhatsApp
+            </label>
+            <label style="display:inline-flex;gap:8px;align-items:center;">
+              <input type="checkbox" name="channel" value="LinkedIn" /> LinkedIn
+            </label>
+          </fieldset>
+
+          <label style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <span>What should the agent do?</span>
+            <textarea name="instructions" rows="4" placeholder="Qualify inbound, ask for timeline & budget, then offer a call slot…" style="background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff;"></textarea>
+          </label>
+
+          <div style="display:flex;gap:12px;margin-top:18px;">
+            <button type="button" id="btnPreview" class="btn btn-secondary" style="padding:12px 16px;border:1px solid #334155;border-radius:10px;background:#111827;color:#e5e7eb;font-weight:600;">
+              Generate preview
+            </button>
+            <button type="submit" class="btn btn-primary" style="padding:12px 16px;border-radius:10px;background:#60a5fa;color:#0b1220;font-weight:800;">
+              Start free demo
+            </button>
+          </div>
+
+          <p style="color:#9aa4b2;margin-top:10px;font-size:13px;">Submitting will send the config to our team. You’ll get a confirmation email.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Right: Live Preview -->
+    <aside aria-labelledby="live-preview">
+      <div style="background:#0f172a;border:1px solid #1f2937;border-radius:16px;padding:22px;position:sticky;top:24px;">
+        <h2 id="live-preview" style="font-size:22px;margin:0 0 10px;">Agent preview</h2>
+        <p style="color:#9aa4b2;margin:0 0 14px;">This simulates how your agent might greet and qualify a lead.</p>
+
+        <div id="previewCard" style="border:1px solid #253047;border-radius:14px;padding:14px;background:#0b1220">
+          <div style="display:flex;gap:10px;align-items:flex-start;">
+            <div style="width:10px;height:10px;border-radius:50%;background:#34d399;margin-top:8px;"></div>
+            <div>
+              <p id="pvGreeting" style="margin:0 0 8px;color:#e5e7eb;">Hey there — I’m your Bravon agent. I can qualify leads and book a call.</p>
+              <p id="pvQual" style="margin:0 0 8px;color:#cbd5e1;">May I ask about your timeline and budget?</p>
+              <p id="pvCTA" style="margin:0;color:#93c5fd;">I can propose a slot this week. Interested?</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:12px;">
+          <button id="btnCopyText" style="padding:10px 12px;border:1px solid #334155;border-radius:10px;background:#111827;color:#e5e7eb;">Copy preview text</button>
+          <button id="btnReset" style="padding:10px 12px;border:1px solid #334155;border-radius:10px;background:#111827;color:#e5e7eb;">Reset</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    // Small helper to read form values
+    function val(name){ return document.querySelector('[name="'+name+'"]')?.value?.trim() || ""; }
+    function channels(){
+      return [...document.querySelectorAll('input[name="channel"]:checked')].map(x=>x.value);
+    }
+
+    function buildPreview(){
+      const name = val('name') || "there";
+      const goal = val('goal') || "qualified demos";
+      const vertical = val('vertical') || "B2B";
+      const ch = channels().join(" + ") || "Website chat";
+      const spec = (document.querySelector('[name="instructions"]')?.value || "").trim();
+
+      const greet = `Hey ${name} — I’m your Bravon agent 👋 I help you drive ${goal} via ${ch}.`;
+      const qual  = `For ${vertical}, I’ll capture need, timing & budget in friendly steps${spec ? " — and follow your instruction: “"+spec.slice(0,120)+"”…" : "."}`;
+      const cta   = `Want me to propose a call slot once the fit looks good?`;
+
+      document.getElementById('pvGreeting').textContent = greet;
+      document.getElementById('pvQual').textContent = qual;
+      document.getElementById('pvCTA').textContent = cta;
+
+      if (window.plausible) plausible('DemoPreviewGenerated');
+    }
+
+    document.getElementById('btnPreview').addEventListener('click', buildPreview);
+    document.getElementById('btnReset').addEventListener('click', () => {
+      document.getElementById('pvGreeting').textContent = 'Hey there — I’m your Bravon agent. I can qualify leads and book a call.';
+      document.getElementById('pvQual').textContent = 'May I ask about your timeline and budget?';
+      document.getElementById('pvCTA').textContent = 'I can propose a slot this week. Interested?';
+    });
+
+    document.getElementById('btnCopyText').addEventListener('click', async () => {
+      const t = [
+        document.getElementById('pvGreeting').textContent,
+        document.getElementById('pvQual').textContent,
+        document.getElementById('pvCTA').textContent,
+      ].join('\n\n');
+      try { await navigator.clipboard.writeText(t); alert('Preview copied ✅'); }
+      catch(e){ alert('Copy failed'); }
+    });
+  </script>
+<!-- Netlify detection fallback (hidden) -->
+<form name="bravon-demo" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="bravon-demo" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+</form>
+</body>
+</html>

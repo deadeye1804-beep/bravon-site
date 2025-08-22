@@ -170,3 +170,66 @@ body{
 .footer-links{display:flex;gap:16px}
 .footer a{color:#96b3d3;text-decoration:none}
 .footer a:hover{color:#e8f2ff}
+header {
+  display: block;
+  width: 100%;
+}
+
+header nav a {
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+/* --- Top Nav polish --- */
+.nav {
+  position: sticky;       /* oben mitlaufen */
+  top: 0;
+  z-index: 50;
+  background: rgba(6, 10, 18, 0.75); /* dein dunkles Hero, leicht transparent */
+  backdrop-filter: saturate(140%) blur(6px);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;     /* vertikal zentriert */
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 20px;      /* Abstand oben/unten + links/rechts */
+  max-width: 1200px;
+  margin: 0 auto;          /* mittig */
+}
+
+.brand a {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav_links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav_links a:hover {
+  color: #fff;
+}
+
+.nav-cta .btn.btn-primary {
+  padding: 10px 16px;      /* etwas kompakter */
+  line-height: 1;
+}
