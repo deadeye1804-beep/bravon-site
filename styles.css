@@ -259,3 +259,30 @@ header.nav .brand a:hover {
 .nav .brand .logo span:last-child  { color:#93c5fd; font-weight:800; }
 .nav .brand:hover .logo span:first-child { color:#ffffff; }
 .nav .brand:hover .logo span:last-child  { color:#bfdbfe; }
+/* Logo-Brand Styling Demo Light */
+.nav .brand .logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.nav .brand .logo .bravon {
+  color: #e5e7eb; /* Weiß / Hellgrau */
+  font-weight: 700;
+}
+
+.nav .brand .logo .ai {
+  color: #60a5fa; /* Dein Blau von der Startseite */
+  font-weight: 800;
+}
+
+.nav .brand:hover .logo .bravon {
+  color: #ffffff; /* Hover: helleres Weiß */
+}
+
+.nav .brand:hover .logo .ai {
+  color: #93c5fd; /* Hover: helleres Blau */
+}
