@@ -244,3 +244,18 @@ header nav a:hover {
 .nav .brand a:hover {
   color: #93c5fd;   /* Hellblau beim Hover */
 }
+/* === Demo page: make brand match homepage === */
+header.nav .brand a {
+  color: #ffffff !important;        /* same as homepage */
+  text-decoration: none;
+  font-weight: 700;
+  transition: color .15s ease-in-out;
+}
+header.nav .brand a:hover {
+  color: #ffffff !important;        /* no color change on hover (like homepage) */
+}
+/* Demo Light – Brand colors wie Home */
+.nav .brand .logo span:first-child { color:#e5e7eb; font-weight:700; }
+.nav .brand .logo span:last-child  { color:#93c5fd; font-weight:800; }
+.nav .brand:hover .logo span:first-child { color:#ffffff; }
+.nav .brand:hover .logo span:last-child  { color:#bfdbfe; }
