@@ -267,3 +267,34 @@ body.bg{
   text-decoration: none;
 }
 .btn.btn-primary:hover { filter: brightness(1.05); }
+.pricing-info {
+  padding: 48px 0;
+  background: #0d1117; /* dunkler Hintergrund */
+  color: #fff;
+}
+
+.pricing-info .info-box {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #121821;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 32px;
+  line-height: 1.6;
+}
+
+.pricing-info h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.pricing-info ul {
+  margin: 12px 0 16px;
+  padding-left: 20px;
+}
+
+.pricing-info li {
+  margin-bottom: 8px;
+  opacity: 0.95;
+}
