@@ -249,3 +249,33 @@ input:focus, select:focus, textarea:focus{
 /* Misc helpers */
 .card a{ color:var(--accent-2); }
 .card a:hover{ text-decoration:underline; }
+/* === NAV alignment fix: make all items same height as "Free Demo" === */
+:root { --nav-h: 40px; }              /* gewünschte Button-/Link-Höhe */
+
+.nav-inner { align-items: center; }   /* safety, falls überschrieben */
+
+.links a {
+  display: flex;
+  align-items: center;
+  height: var(--nav-h);               /* gleiche Höhe wie Button */
+  line-height: 1;
+  padding: 0;                         /* kein vertikales Padding bei Textlinks */
+}
+
+/* Buttons in der Nav auf gleiche Höhe bringen */
+.nav .btn {
+  display: flex;
+  align-items: center;
+  height: var(--nav-h);
+  padding: 0 14px;                    /* nur horizontaler Abstand */
+  line-height: 1;
+}
+
+/* Falls rechts der "Get Started"-CTA separat steht */
+.nav-cta .btn {
+  display: flex;
+  align-items: center;
+  height: var(--nav-h);
+  padding: 0 14px;
+  line-height: 1;
+}
