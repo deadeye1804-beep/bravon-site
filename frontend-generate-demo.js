@@ -9,12 +9,17 @@ btn?.addEventListener('click', async () => {
     const res = await fetch('/.netlify/functions/generate-demo', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ description: window.demoDesc || '', language: window.demoLang || 'EN' })
+      body: JSON.stringify({
+        description: window.demoDesc || '',
+        language: window.demoLang || 'EN'
+      })
     });
     const data = await res.json();
-    out.innerHTML = data.url ? `<a href="${'{'}data.url{'}'}" target="_blank" rel="noopener">${'{'}data.url{'}'}</a>` : (data.error || 'Something went wrong.');
+    out.innerHTML = data.url
+      ? `<a href="${data.url}" target="_blank" rel="noopener">${data.url}</a>`
+      : (data.error || 'Something went wrong.');
   } catch (e) {
-    out.textContent = e.message;
+    out.textContent = e.message || 'Request failed.';
   } finally {
     btn.disabled = false;
   }

@@ -11,7 +11,7 @@ exports.handler = async (event) => {
   try {
     const { description, language } = JSON.parse(event.body || "{}");
 
-    // OPTIONAL: Persist lead to Airtable (set env vars in Netlify site settings)
+    // OPTIONAL: Persist lead to Airtable
     const baseId = process.env.AIRTABLE_BASE_ID;
     const table = process.env.AIRTABLE_TABLE;
     const apiKey = process.env.AIRTABLE_API_KEY;
@@ -34,7 +34,7 @@ exports.handler = async (event) => {
       });
     }
 
-    // Generate a simple slug and return a demo URL (replace with your real demo hosting later)
+    // simple slug + demo URL
     const slug = Math.random().toString(36).slice(2, 8);
     const demoUrl = `https://demo.bravon.it.com/${slug}`;
 
@@ -47,7 +47,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ error: err.message }),
+      body: JSON.stringify({ error: err.message || "Server error" }),
     };
   }
 };

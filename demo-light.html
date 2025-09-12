@@ -43,25 +43,25 @@
           <input type="hidden" name="source" value="demo-page" />
           <p style="display:none"><label>Don’t fill this out: <input name="bot-field" /></label></p>
 
-<label class="label">Channels</label>
-<div class="channel-group">
-  <label class="channel-option">
-    <input type="checkbox" name="channels" value="Website Chat" checked />
-    <span>💬 Website Chat</span>
-  </label>
-  <label class="channel-option">
-    <input type="checkbox" name="channels" value="WhatsApp" />
-    <span>📱 WhatsApp</span>
-  </label>
-  <label class="channel-option">
-    <input type="checkbox" name="channels" value="LinkedIn" />
-    <span>🔗 LinkedIn</span>
-  </label>
-  <label class="channel-option">
-    <input type="checkbox" name="channels" value="Email" />
-    <span>✉️ Email</span>
-  </label>
-</div>
+          <label class="label">Channels</label>
+          <div class="channel-group">
+            <label class="channel-option">
+              <input type="checkbox" name="channels" value="Website Chat" checked />
+              <span>💬 Website Chat</span>
+            </label>
+            <label class="channel-option">
+              <input type="checkbox" name="channels" value="WhatsApp" />
+              <span>📱 WhatsApp</span>
+            </label>
+            <label class="channel-option">
+              <input type="checkbox" name="channels" value="LinkedIn" />
+              <span>🔗 LinkedIn</span>
+            </label>
+            <label class="channel-option">
+              <input type="checkbox" name="channels" value="Email" />
+              <span>✉️ Email</span>
+            </label>
+          </div>
 
           <label class="fld" style="margin-top:12px">
             <span>What should the agent do?</span>
@@ -112,50 +112,58 @@
   </footer>
 
   <script>
-    // Lightweight preview helper (purely client-side)
-    function q(n){return document.querySelector(n)}
-    function val(name){return q('[name="'+name+'"]')?.value?.trim()||""}
-    function channels(){return [...document.querySelectorAll('input[name="channel"]:checked')].map(x=>x.value).join(' + ')}
+    // Preview – arbeitet NUR mit name="channels" + textarea "instructions"
+    const $ = s => document.querySelector(s);
+    const $$ = s => Array.from(document.querySelectorAll(s));
 
-    function buildPreview(){
-      const name = val('name') || "there"
-      const goal = val('goal') || "qualified demos"
-      const vertical = val('vertical') || "B2B"
-      const ch = channels() || "Website chat"
-      const spec = (q('[name="instructions"]')?.value||"").trim()
-      q('#pvGreeting').textContent = `Hey ${name} — I’m your Bravon agent 👋 I help you drive ${goal} via ${ch}.`
-      q('#pvQual').textContent = `For ${vertical}, I’ll capture need, timing & budget in friendly steps${spec ? " — and follow your instruction: “"+spec.slice(0,120)+"”…" : "."}`
-      q('#pvCTA').textContent = `Want me to propose a call slot once the fit looks good?`
+    function selectedChannels(){
+      const list = $$('.channel-group input[name="channels"]:checked').map(x=>x.value);
+      return list.length ? list.join(' + ') : 'Website Chat';
     }
 
-    ['name','goal','vertical','instructions'].forEach(n=>{
-      const el = document.querySelector('[name="'+n+'"]')
-      if(el) el.addEventListener('input', buildPreview)
-    })
-    document.addEventListener('change', e=>{
-      if(e.target && e.target.name==='channel') buildPreview()
-    })
+    function buildPreview(){
+      const spec = ($('[name="instructions"]')?.value || '').trim();
+      $('#pvGreeting').textContent = 'Hey there — I’m your Bravon agent. I can qualify leads and book a call.';
+      $('#pvQual').textContent = 'May I ask about your timeline and budget?';
+      $('#pvCTA').textContent = `I can propose a slot this week via ${selectedChannels()}. ${spec ? 'Focus: '+spec.slice(0,120) : ''}`;
+    }
 
-    q('#btnReset').addEventListener('click', ()=>{
-      q('#pvGreeting').textContent='Hey there — I’m your Bravon agent. I can qualify leads and book a call.'
-      q('#pvQual').textContent='May I ask about your timeline and budget?'
-      q('#pvCTA').textContent='I can propose a slot this week. Interested?'
-    })
-    q('#btnCopyText').addEventListener('click', async ()=>{
-      const t=[q('#pvGreeting').textContent,q('#pvQual').textContent,q('#pvCTA').textContent].join('\n\n')
-      try{await navigator.clipboard.writeText(t); alert('Preview copied ✅')}catch(e){alert('Copy failed')}
-    })
+    // Events
+    const ta = document.querySelector('[name="instructions"]');
+    if (ta) ta.addEventListener('input', buildPreview);
+    document.addEventListener('change', e => {
+      if (e.target && e.target.name === 'channels') buildPreview();
+    });
+
+    $('#btnReset')?.addEventListener('click', ()=>{
+      $('#pvGreeting').textContent='Hey there — I’m your Bravon agent. I can qualify leads and book a call.';
+      $('#pvQual').textContent='May I ask about your timeline and budget?';
+      $('#pvCTA').textContent='I can propose a slot this week. Interested?';
+    });
+
+    $('#btnCopyText')?.addEventListener('click', async ()=>{
+      const t = [$('#pvGreeting').textContent,$('#pvQual').textContent,$('#pvCTA').textContent].join('\n\n');
+      try { await navigator.clipboard.writeText(t); alert('Preview copied ✅'); }
+      catch { alert('Copy failed'); }
+    });
   </script>
 
   <style>
-    /* Small helpers local to the form */
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    /* Local helpers */
     .fld{display:flex;flex-direction:column;gap:8px}
     .fld input,.fld select,.fld textarea{
       background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;color:#fff
     }
-    .chk{display:inline-flex;gap:8px;align-items:center;margin-right:16px}
-    @media (max-width: 900px){ .grid-2{grid-template-columns:1fr} }
+    .label{display:block;margin:12px 0 6px;color:#cbd5e1;font-size:14px}
+    .channel-group{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+    .channel-option{display:flex;align-items:center;gap:10px;cursor:pointer}
+    .channel-option input{
+      appearance:none;width:16px;height:16px;border:1px solid #1f2937;border-radius:4px;background:#0b1220;
+      display:grid;place-items:center;outline:none;
+    }
+    .channel-option input:checked{background:#0b1329;box-shadow:0 0 0 2px rgba(14,165,233,.35) inset}
+    .channel-option span{color:#e5e7eb;font-size:14px}
   </style>
 </body>
 </html>
+
