@@ -239,3 +239,64 @@ body.bg{
   .footer-inner{flex-direction:column;align-items:flex-start}
   .plan-card.popular{ transform:none; }
 }
+/* === Channels (card-styled checkboxes for dark UI) === */
+.form-row .label { display:block; font-weight:700; margin-bottom:8px; }
+.hint { color: var(--sub); font-size: 12px; margin-top: 8px; }
+
+.channel-group{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:12px;
+  background:#0f172a;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+}
+
+.channel-option{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid #1f2937;
+  border-radius:10px;
+  background:#111827;
+  padding:10px 12px;
+  cursor:pointer;
+  user-select:none;
+  transition:border-color .15s, background .15s, transform .05s;
+}
+.channel-option:hover{ border-color:#2b3850; background:#0f1827; }
+.channel-option:active{ transform: scale(0.998); }
+
+.channel-option input{
+  /* custom dark checkbox */
+  appearance:none;
+  width:18px; height:18px;
+  border:2px solid #334155;
+  border-radius:6px;
+  background:#0b1220;
+  display:grid; place-content:center;
+  transition: background .15s, border-color .15s;
+  outline:none;
+}
+.channel-option input:focus-visible{
+  box-shadow: 0 0 0 3px rgba(14,165,233,.35);
+  border-color: var(--accent);
+}
+.channel-option input:checked{
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.channel-option input:checked::after{
+  content:"";
+  width:10px; height:10px;
+  background:#001018;
+  border-radius:3px;
+}
+
+.channel-icon{ opacity:.9; }
+.channel-name{ font-weight:600; }
+
+@media (max-width: 640px){
+  .channel-group{ grid-template-columns: 1fr; }
+}
