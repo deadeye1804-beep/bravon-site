@@ -43,33 +43,25 @@
           <input type="hidden" name="source" value="demo-page" />
           <p style="display:none"><label>Don’t fill this out: <input name="bot-field" /></label></p>
 
-          <div class="grid-2">
-            <label class="fld"><span>Name</span><input required name="name" type="text" placeholder="Jane Doe"></label>
-            <label class="fld"><span>Email</span><input required name="email" type="email" placeholder="jane@company.com"></label>
-          </div>
-
-          <div class="grid-2">
-            <label class="fld"><span>Company</span><input name="company" type="text" placeholder="Acme GmbH"></label>
-            <label class="fld"><span>Website</span><input name="website" type="url" placeholder="https://…"></label>
-          </div>
-
-          <div class="grid-2">
-            <label class="fld">
-              <span>Primary goal</span>
-              <select name="goal">
-                <option>More qualified demos</option>
-                <option>Inbound lead triage</option>
-                <option>Funnel follow-ups</option>
-                <option>Faster response time</option>
-              </select>
-            </label>
-            <label class="fld">
-              <span>Vertical</span>
-              <select name="vertical">
-                <option>SaaS</option><option>Services</option><option>E-commerce</option><option>Other</option>
-              </select>
-            </label>
-          </div>
+<label>Channels</label>
+<div class="channel-group">
+  <label class="channel-option">
+    <input type="checkbox" name="channels" value="chat">
+    <span>💬 Website Chat</span>
+  </label>
+  <label class="channel-option">
+    <input type="checkbox" name="channels" value="whatsapp">
+    <span>📱 WhatsApp</span>
+  </label>
+  <label class="channel-option">
+    <input type="checkbox" name="channels" value="linkedin">
+    <span>🔗 LinkedIn</span>
+  </label>
+  <label class="channel-option">
+    <input type="checkbox" name="channels" value="email">
+    <span>✉️ Email</span>
+  </label>
+</div>
 
           <fieldset class="fld" style="margin-top:12px">
             <legend style="padding:0 6px;color:#9aa4b2">Channels</legend>
