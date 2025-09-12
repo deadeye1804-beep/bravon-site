@@ -6,8 +6,8 @@ http://www.bravon.it.com/*    https://www.bravon.it.com/:splat   301!
 # HTTP -> HTTPS (apex)
 http://bravon.it.com/*        https://www.bravon.it.com/:splat   301!
 
-# HTTPS apex -> HTTPS www (nur eine Richtung!)
+# HTTPS apex -> HTTPS www
 https://bravon.it.com/*       https://www.bravon.it.com/:splat   301!
 
-# (Optional) SPA-Fallback, falls du ein Single-Page-Setup hast
+# (Optional, falls SPA)
 # /*   /index.html   200
