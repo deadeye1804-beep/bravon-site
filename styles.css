@@ -25,7 +25,9 @@ body.bg{
 .sub{color:var(--sub);max-width:760px}
 .sub.small{font-size:14px}
 
-/* NAV */
+/* NAV (aligned items) */
+:root { --nav-h: 44px; } /* Zielhöhe für alle Nav-Items */
+
 .nav{
   border-bottom:1px solid var(--border);
   position:sticky;
@@ -36,85 +38,56 @@ body.bg{
 }
 .nav-inner{
   display:flex;
-  align-items:center;
+  align-items:center;             /* vertikal zentrieren */
   justify-content:space-between;
-  padding:14px 0;
+  padding:8px 0;                  /* etwas weniger Vertical Padding */
 }
+
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand-dot{font-size:18px}
 .brand-name{font-weight:800;color:#fff}
 .brand-name .ai{color:var(--accent-2)}
-.links{display:flex;gap:22px}
-.links a{color:#c7d2fe;text-decoration:none}
-.links a:hover{color:#fff}
-.nav-cta{display:flex;gap:12px}
 
-/* Buttons */
-.btn{
-  display:inline-block;
-  padding:12px 16px;
-  border-radius:10px;
+/* Links + Button in einer Linie */
+.links{
+  display:flex;
+  align-items:center;             /* WICHTIG: zentriert auch die Textlinks */
+  gap:22px;
+}
+
+/* Textlinks */
+.links a:not(.btn){
+  display:inline-flex;            /* gleiche Box-Logik wie Button */
+  align-items:center;
+  height:var(--nav-h);            /* gleiche Höhe wie Button */
+  line-height:1;                  /* kein zusätzlicher Zeilenabstand */
+  padding:0;                      /* kein vertikales Padding */
+  color:#c7d2fe;
   text-decoration:none;
-  font-weight:800;
-  border:0;
-  cursor:pointer;
 }
-.btn-primary{ background:var(--accent); color:#0b1220; }
-.btn-primary:hover{ filter:brightness(1.05); }
-.btn-primary:disabled{ opacity:.6; cursor:not-allowed; }
-.btn-ghost{
-  border:1px solid #334155;
-  color:#e5e7eb;
-  background:#111827;
+.links a:not(.btn):hover{ color:#fff; }
+
+/* Buttons innerhalb der NAV (inkl. "Free Demo") */
+.nav .btn{
+  display:inline-flex;
+  align-items:center;
+  height:var(--nav-h);            /* exakt gleiche Höhe */
+  padding:0 14px;                 /* nur horizontaler Abstand */
+  line-height:1;
 }
-.btn-ghost:hover{ border-color:#3b4a66; background:#1a2335; }
 
-/* Sections */
-.section{padding:56px 0}
-.section.muted{background:var(--muted)}
-
-/* Hero */
-.hero{ padding:56px 0 8px; background-color:transparent; }
-.eyebrow{ letter-spacing:.12em; color:#9ca3af; text-transform:uppercase; font-weight:700; }
-.hero-actions{ display:flex; gap:12px; margin-top:14px; }
-.trust{ color:#9aa4b2; margin-top:18px; font-size:13px; }
-
-/* Cards */
-.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.card{
-  border:1px solid var(--border);
-  border-radius:16px;
-  background:#0f172a;
-  padding:18px;
+/* rechter CTA */
+.nav-cta{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-.card-icon{font-size:22px;margin-bottom:10px}
-.card-title{margin:0 0 6px;font-size:18px}
-.card-text{color:var(--sub);margin:0}
-
-/* List boxes */
-.list{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.list-box{
-  border:1px solid var(--border);
-  border-radius:16px;
-  background:#0f172a;
-  padding:18px;
-}
-.list-box h4{margin:2px 0 10px}
-.list-box ul{margin:0;padding-left:18px;color:var(--sub)}
-
-/* Timeline steps */
-.steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.step{
-  border:1px solid var(--border);
-  border-radius:16px;
-  background:#0f172a;
-  padding:18px;
-}
-.step-num{
-  width:28px; height:28px; border-radius:8px;
-  background:#111827; border:1px solid #334155;
-  display:flex; align-items:center; justify-content:center;
-  margin-bottom:8px; color:#9aa4b2; font-weight:700;
+.nav-cta .btn{
+  display:inline-flex;
+  align-items:center;
+  height:var(--nav-h);
+  padding:0 14px;
+  line-height:1;
 }
 
 /* ===========================
