@@ -405,3 +405,68 @@ body.bg{
   .form-card{ padding: 18px; }
   .plans-grid{ grid-template-columns: 1fr; }
 }
+/* ===== Mobile-first polish =========================================== */
+
+/* Tablets: etwas enger */
+@media (max-width: 1024px){
+  .container { padding: 0 18px; }
+  .h1 { font-size: 40px; }
+  .plans-grid { grid-template-columns: 1fr 1fr; }
+  .cards, .list, .steps { grid-template-columns: 1fr 1fr; }
+}
+
+/* Phones: ≤640px */
+@media (max-width: 640px){
+  /* Layout spacing */
+  .section { padding: 32px 0; }
+  .container { padding: 0 16px; }
+
+  /* Nav */
+  .links { display: none; }                 /* nur CTA rechts sichtbar */
+  .nav-inner { gap: 12px; padding: 10px 0; }
+
+  /* Hero */
+  .h1 { font-size: 32px; line-height: 1.15; margin: 8px 0 10px; }
+  .sub { font-size: 14px; }
+  .hero-actions { flex-direction: column; gap: 10px; margin-top: 14px; }
+  .hero .btn { width: 100%; text-align: center; }
+  .trust { font-size: 12px; margin-top: 12px; }
+
+  /* Cards & lists → 1 Spalte */
+  .cards, .list, .steps { grid-template-columns: 1fr; gap: 12px; }
+  .card, .list-box, .step { padding: 14px; border-radius: 14px; }
+
+  /* Pricing */
+  .plans-grid { grid-template-columns: 1fr; gap: 14px; }
+  .plan-card { padding: 16px; border-radius: 14px; }
+  .plan-amount { font-size: 24px; }
+  .plan-card.popular { transform: none; box-shadow: none; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  /* Forms (alle neuen Seiten) */
+  .form-wrap { margin: 16px 0 0; }
+  .form-card { padding: 16px; border-radius: 14px; }
+  .field-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  .field-grid.one { grid-template-columns: 1fr; }
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="url"],
+  .form input[type="date"],
+  .form select,
+  .form textarea {
+    font-size: 16px;         /* verhindert iOS-Zoom */
+    min-height: 44px;        /* bessere Tap-Ziele */
+    padding: 12px 12px;
+  }
+  .form textarea { min-height: 110px; }
+  .channel-group { grid-template-columns: 1fr; gap: 10px; padding: 10px; }
+  .channel-option { padding: 12px 14px; }
+  .channel-option input { width: 20px; height: 20px; }
+  .btn { width: 100%; text-align: center; padding: 14px 16px; }
+  .note { font-size: 12px; opacity: .9; }
+}
+
+/* Kleinere Fixes überall */
+img, video { max-width: 100%; height: auto; display: block; }
