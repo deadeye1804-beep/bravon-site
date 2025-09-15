@@ -537,11 +537,4 @@ section{scroll-margin-top:84px;} /* nicer anchor jump under fixed nav */
 a.btn:focus-visible{
   outline:2px solid var(--brand); outline-offset:2px;
 }
-/* Einheitliche Nav-Bar-Höhe auf allen Seiten */
-header.nav, .nav {
-  min-height: 72px;         /* gleiche Höhe wie Startseite */
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-  box-sizing: border-box;
-}
+
