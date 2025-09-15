@@ -470,3 +470,6 @@ body.bg{
 
 /* Kleinere Fixes überall */
 img, video { max-width: 100%; height: auto; display: block; }
+.brand-name .ai {
+  color: #3b82f6; /* dein Blau */
+}
