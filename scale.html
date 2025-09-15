@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bravon – Scale Proposal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg">
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="dot"></span><span>Bravon AI</span></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="h1">Scale Proposal Request</h1>
+      <p class="sub">Tell us a bit more about your needs and we’ll prepare a custom proposal.</p>
+
+      <form name="scale-request" method="POST" data-netlify="true" class="form">
+        <input type="hidden" name="form-name" value="scale-request" />
+
+        <label>Company <input type="text" name="company" required /></label>
+        <label>Team Size <input type="number" name="team_size" /></label>
+        <label>Channels <input type="text" name="channels" /></label>
+        <label>Integrations <input type="text" name="integrations" /></label>
+        <label>Region <input type="text" name="region" /></label>
+        <label>Notes <textarea name="notes" rows="4"></textarea></label>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>

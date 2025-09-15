@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bravon – Growth Intake</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg">
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="dot"></span><span>Bravon AI</span></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="h1">Growth Plan Setup</h1>
+      <p class="sub">Thank you for your payment! Please complete your intake below so we can configure your Agent.</p>
+
+      <form name="growth-intake" method="POST" data-netlify="true" class="form">
+        <input type="hidden" name="form-name" value="growth-intake" />
+
+        <label>CRM <input type="text" name="crm" placeholder="HubSpot, Pipedrive…" /></label>
+        <label>Calendar Link <input type="url" name="calendar" /></label>
+        <label>Preferred Channels <input type="text" name="channels" /></label>
+        <label>Approx. Volume <input type="text" name="volume" /></label>
+        <label>Voice & Tone <textarea name="tone" rows="3"></textarea></label>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
