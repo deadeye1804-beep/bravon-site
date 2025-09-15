@@ -380,3 +380,35 @@ input:focus, select:focus, textarea:focus{
 
 @media (max-width: 1024px){ .plans-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width: 640px){ .plans-grid{ grid-template-columns:1fr; } .plan-card.popular{ transform:none; } }
+/* === QUICK FIX: header alignment & plans grid === */
+
+/* Top bar */
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(11,18,32,.95); backdrop-filter: saturate(120%) blur(8px); border-bottom: 1px solid var(--border); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 20px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.links { display: flex; align-items: center; gap: 22px; }
+.links a { display: inline-flex; align-items: center; height: 40px; line-height: 40px; padding: 0 2px; text-decoration: none; color: #c7d2fe; }
+.links a:hover { color: #fff; }
+.nav-cta { display: flex; align-items: center; }
+.nav-cta .btn { display: inline-flex; align-items: center; height: 40px; padding: 0 14px; }
+
+/* Plans grid: 3 equal columns, consistent heights */
+.section.plans .plans-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+.section.plans .plan-card,
+.section#plans .card.price { display: flex; flex-direction: column; height: 100%; }
+.section#plans .card.price .btn { margin-top: auto; }
+
+/* Highlight Growth card a bit */
+.section#plans .price-popular { position: relative; border-color: rgba(0,200,255,.45); box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 0 1px rgba(0,200,255,.18) inset; transform: translateY(-4px); }
+
+/* Responsive */
+@media (max-width: 1024px){
+  .section.plans .plans-grid,
+  .section#plans .plans-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .links { display: none; }            /* mobile: hide middle nav links */
+  .section.plans .plans-grid,
+  .section#plans .plans-grid { grid-template-columns: 1fr; }
+  .section#plans .price-popular { transform: none; }
+}
