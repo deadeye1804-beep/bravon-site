@@ -10,8 +10,9 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <span class="dot"></span><span class="brand-name">Bravon<span class="ai">Ai</span></span>
+      <a href="/" class="brand">
+        <span class="brand-dot">⚡</span>
+        <span class="brand-name">Bravon<span class="ai">Ai</span></span>
      </a>
     </div>
   </header>
@@ -143,6 +144,18 @@
   <button class="btn btn-primary mt-18" type="submit">Submit configuration</button>
   <p class="note">We’ll confirm by email and send the next steps.</p>
 </form>
+<script>
+  (function () {
+    const other = document.getElementById('g-other');
+    const wrap  = document.getElementById('g-otherWrap');
+    if (other && wrap) {
+      wrap.style.display = other.checked ? 'block' : 'none';
+      other.addEventListener('change', () => {
+        wrap.style.display = other.checked ? 'block' : 'none';
+      });
+    }
+  })();
+</script>
       </div>
     </div>
   </section>
