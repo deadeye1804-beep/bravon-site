@@ -15,31 +15,31 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
 
   <!-- Styles -->
- <link rel="stylesheet" href="styles.css?v=fix-1103">
+<link rel="stylesheet" href="styles.css?v=fix-nav-1108">
 </head>
 
 <body class="bg">
   <!-- ================= NAV ================= -->
-  <header class="nav">
+ <header class="nav">
   <div class="container nav-inner">
     <a href="/" class="brand">
       <span class="brand-dot">⚡</span>
       <span class="brand-name">Bravon <span class="ai">AI</span></span>
     </a>
 
+    <!-- Wichtig: class="links" (nicht nav-links) -->
     <nav class="links">
       <a href="#benefits">Benefits</a>
       <a href="#what-we-handle">What we handle</a>
       <a href="#timeline">Timeline</a>
       <a href="#plans">Plans</a>
-      <a href="demo-light.html" class="btn btn-ghost">Free Demo</a>
     </nav>
 
-    <div class="nav-cta">
-      <a class="btn btn-primary" href="#plans">Get Started</a>
-    </div>
+    <!-- Der CTA ist selbst ein Link-Button -->
+    <a class="btn btn-primary nav-cta" href="demo-light.html">Free Demo</a>
   </div>
 </header>
+
 
 
   <!-- ================= HERO ================= -->

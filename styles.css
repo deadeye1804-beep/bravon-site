@@ -412,3 +412,39 @@ input:focus, select:focus, textarea:focus{
   .section#plans .plans-grid { grid-template-columns: 1fr; }
   .section#plans .price-popular { transform: none; }
 }
+/* ===== Nav-Fix: alles auf eine Höhe ===== */
+.nav-inner{
+  display:flex;
+  align-items:center;          /* vertikal mittig */
+  justify-content:space-between;
+  gap:18px;
+}
+
+.links{
+  display:flex;
+  align-items:center;          /* vertikal mittig */
+  gap:22px;
+}
+
+.links a{
+  display:inline-flex;         /* gleiche Zeilenhöhe wie Button */
+  align-items:center;
+  height:40px;                 /* fixiert die Höhe */
+  line-height:1;
+  text-decoration:none;
+}
+
+.nav .btn,
+.nav-cta{
+  display:inline-flex;
+  align-items:center;
+  height:40px;                 /* gleiche Höhe wie Links */
+  padding:0 14px;
+  border-radius:10px;
+  font-weight:800;
+}
+
+/* Optional: kleiner Abstand zwischen Links und CTA auf sehr schmalen Breiten */
+@media (max-width: 900px){
+  .links{ gap:16px; }
+}
