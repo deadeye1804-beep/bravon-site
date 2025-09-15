@@ -135,7 +135,18 @@
       </div>
     </div>
   </section>
-
+<script>
+  (function () {
+    const other = document.getElementById('s-other');
+    const wrap  = document.getElementById('s-otherWrap');
+    if (other && wrap) {
+      wrap.style.display = other.checked ? 'block' : 'none';
+      other.addEventListener('change', () => {
+        wrap.style.display = other.checked ? 'block' : 'none';
+      });
+    }
+  })();
+</script>
   <script>
     const sOther = document.getElementById('s-other');
     const sOtherWrap = document.getElementById('s-otherWrap');

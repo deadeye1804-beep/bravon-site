@@ -481,3 +481,12 @@ img, video { max-width: 100%; height: auto; display: block; }
   color: var(--accent-2);   /* dein helleres Blau */
   font-weight: 700;         /* gleiche Dicke wie der Rest vom Logo */
 }
+/* Honeypot sauber verstecken (nicht display:none!) */
+.hp-wrap{
+  position:absolute;
+  left:-10000px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.hp-wrap input{ pointer-events:none; }

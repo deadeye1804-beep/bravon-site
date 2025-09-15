@@ -24,114 +24,125 @@
       </div>
 
       <div class="form-card">
-        <form name="growth-intake" method="POST" data-netlify="true"
-              netlify-honeypot="bot-field" action="/thanks.html" class="form">
-          <input type="hidden" name="form-name" value="growth-intake" />
-          <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+       <form
+  name="growth-intake"
+  method="POST"
+  action="/thanks.html"
+  class="form"
+  data-netlify="true"
+  data-netlify-honeypot="hp"
+>
+  <input type="hidden" name="form-name" value="growth-intake" />
 
-          <!-- Company / Website -->
-          <div class="field-grid">
-            <div>
-              <label class="label">Company</label>
-              <input type="text" name="company" required />
-            </div>
-            <div>
-              <label class="label">Website</label>
-              <input type="url" name="website" placeholder="https://…" required />
-            </div>
-          </div>
+  <!-- Honeypot: im DOM sichtbar für Bots, für User unsichtbar -->
+  <div class="hp-wrap" aria-hidden="true">
+    <label for="hp">Leave this field empty</label>
+    <input id="hp" name="hp" type="text" tabindex="-1" autocomplete="off" />
+  </div>
 
-          <!-- Email / Contact -->
-          <div class="field-grid mt-12">
-            <div>
-              <label class="label">Contact email</label>
-              <input type="email" name="email" required />
-            </div>
-            <div>
-              <label class="label">Contact name (optional)</label>
-              <input type="text" name="contact_name" />
-            </div>
-          </div>
+  <!-- Company / Website -->
+  <div class="field-grid">
+    <div>
+      <label class="label">Company</label>
+      <input class="input" type="text" name="company" required />
+    </div>
+    <div>
+      <label class="label">Website</label>
+      <input class="input" type="url" name="website" placeholder="https://…" required />
+    </div>
+  </div>
 
-          <!-- CRM / Calendar -->
-          <div class="field-grid mt-12">
-            <div>
-              <label class="label">CRM</label>
-              <select name="crm" required>
-                <option value="">Select…</option>
-                <option>HubSpot</option>
-                <option>Pipedrive</option>
-                <option>Salesforce</option>
-                <option>None / Other</option>
-              </select>
-            </div>
-            <div>
-              <label class="label">Booking calendar link</label>
-              <input type="url" name="calendar_url" placeholder="https://calendly.com/…" />
-            </div>
-          </div>
+  <!-- Email / Contact -->
+  <div class="field-grid mt-12">
+    <div>
+      <label class="label">Contact email</label>
+      <input class="input" type="email" name="email" required />
+    </div>
+    <div>
+      <label class="label">Contact name (optional)</label>
+      <input class="input" type="text" name="contact_name" />
+    </div>
+  </div>
 
-          <!-- Channels -->
-          <div class="field-grid one mt-12">
-            <div>
-              <label class="label">Preferred channels</label>
-              <div class="channel-group">
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="Website Widget" />
-                  <span class="channel-name">Website Widget</span>
-                </label>
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="WhatsApp" />
-                  <span class="channel-name">WhatsApp</span>
-                </label>
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="Email" />
-                  <span class="channel-name">Email</span>
-                </label>
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="LinkedIn" />
-                  <span class="channel-name">LinkedIn</span>
-                </label>
-                <label class="channel-option">
-                  <input id="g-other" type="checkbox" name="channels" value="Other" />
-                  <span class="channel-name">Other</span>
-                </label>
-              </div>
+  <!-- CRM / Calendar -->
+  <div class="field-grid mt-12">
+    <div>
+      <label class="label">CRM</label>
+      <select class="input" name="crm" required>
+        <option value="">Select…</option>
+        <option>HubSpot</option>
+        <option>Pipedrive</option>
+        <option>Salesforce</option>
+        <option>None / Other</option>
+      </select>
+    </div>
+    <div>
+      <label class="label">Booking calendar link</label>
+      <input class="input" type="url" name="calendar_url" placeholder="https://calendly.com/…" />
+    </div>
+  </div>
 
-              <div id="g-otherWrap" class="mt-12" style="display:none">
-                <input type="text" name="channels_other" placeholder="Add another platform…" />
-                <p class="note">e.g., Telegram, WeChat, Instagram DM, custom inbox …</p>
-              </div>
-            </div>
-          </div>
+  <!-- Channels -->
+  <div class="field-grid one mt-12">
+    <div>
+      <label class="label">Preferred channels</label>
+      <div class="channel-group">
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="Website Widget" />
+          <span class="channel-name">Website Widget</span>
+        </label>
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="WhatsApp" />
+          <span class="channel-name">WhatsApp</span>
+        </label>
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="Email" />
+          <span class="channel-name">Email</span>
+        </label>
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="LinkedIn" />
+          <span class="channel-name">LinkedIn</span>
+        </label>
+        <label class="channel-option">
+          <input id="g-other" type="checkbox" name="channels" value="Other" />
+          <span class="channel-name">Other</span>
+        </label>
+      </div>
 
-          <!-- Use cases / Volume -->
-          <div class="field-grid mt-12">
-            <div>
-              <label class="label">Use cases</label>
-              <textarea name="use_cases" placeholder="Lead qualification criteria, follow-up rules, tone…"></textarea>
-            </div>
-            <div>
-              <label class="label">Expected monthly lead volume</label>
-              <input type="text" name="volume" placeholder="e.g., 150–300" />
-            </div>
-          </div>
+      <div id="g-otherWrap" class="mt-12" style="display:none">
+        <input class="input" type="text" name="channels_other" placeholder="Add another platform…" />
+        <p class="note">e.g., Telegram, WeChat, Instagram DM, custom inbox …</p>
+      </div>
+    </div>
+  </div>
 
-          <!-- Routing / Start date -->
-          <div class="field-grid mt-12">
-            <div>
-              <label class="label">Lead routing / fields</label>
-              <textarea name="routing" placeholder="Required CRM fields, pipeline/stage, owners…"></textarea>
-            </div>
-            <div>
-              <label class="label">Preferred start date</label>
-              <input type="date" name="start_date" />
-            </div>
-          </div>
+  <!-- Use cases / Volume -->
+  <div class="field-grid mt-12">
+    <div>
+      <label class="label">Use cases</label>
+      <textarea class="input" name="use_cases" placeholder="Lead qualification criteria, follow-up rules, tone…"></textarea>
+    </div>
+    <div>
+      <label class="label">Expected monthly lead volume</label>
+      <input class="input" type="text" name="volume" placeholder="e.g., 150–300" />
+    </div>
+  </div>
 
-          <button class="btn btn-primary mt-18" type="submit">Submit configuration</button>
-          <p class="note">We’ll confirm by email and send the next steps.</p>
-        </form>
+  <!-- Routing / Start date -->
+  <div class="field-grid mt-12">
+    <div>
+      <label class="label">Lead routing / fields</label>
+      <textarea class="input" name="routing" placeholder="Required CRM fields, pipeline/stage, owners…"></textarea>
+    </div>
+    <div>
+      <label class="label">Preferred start date</label>
+      <input class="input" type="date" name="start_date" />
+    </div>
+  </div>
+
+  <button class="btn btn-primary mt-18" type="submit">Submit configuration</button>
+  <p class="note">We’ll confirm by email and send the next steps.</p>
+</form>
       </div>
     </div>
   </section>

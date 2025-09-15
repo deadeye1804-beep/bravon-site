@@ -23,86 +23,97 @@
       </div>
 
       <div class="form-card">
-        <form name="demo-request" method="POST" data-netlify="true"
-              netlify-honeypot="bot-field" action="/thanks.html" class="form">
-          <input type="hidden" name="form-name" value="demo-request" />
-          <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+        <form
+  name="demo-request"
+  method="POST"
+  action="/thanks.html"
+  class="form"
+  data-netlify="true"
+  data-netlify-honeypot="hp"
+>
+  <!-- Netlify Forms benötigt das Hidden -->
+  <input type="hidden" name="form-name" value="demo-request" />
 
-          <div class="field-grid">
-            <div>
-              <label class="label">Company</label>
-              <input class="" type="text" name="company" required />
-            </div>
-            <div>
-              <label class="label">Website</label>
-              <input class="" type="url" name="website" placeholder="https://…" required />
-            </div>
-          </div>
+  <!-- Honeypot: im DOM sichtbar für Bots, für Menschen unsichtbar -->
+  <div class="hp-wrap" aria-hidden="true">
+    <label for="hp">Leave this field empty</label>
+    <input id="hp" name="hp" type="text" tabindex="-1" autocomplete="off" />
+  </div>
 
-          <div class="field-grid mt-12">
-            <div>
-              <label class="label">Contact email</label>
-              <input type="email" name="email" required />
-            </div>
-            <div>
-              <label class="label">Contact name (optional)</label>
-              <input type="text" name="contact_name" />
-            </div>
-          </div>
+  <div class="field-grid">
+    <div>
+      <label class="label">Company</label>
+      <input class="input" type="text" name="company" required />
+    </div>
+    <div>
+      <label class="label">Website</label>
+      <input class="input" type="url" name="website" placeholder="https://…" required />
+    </div>
+  </div>
 
-          <div class="field-grid one mt-12">
-            <div>
-              <label class="label">Preferred channels</label>
-              <div class="channel-group">
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="Website Widget" />
-                  <span class="channel-name">Website Widget</span>
-                </label>
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="WhatsApp" />
-                  <span class="channel-name">WhatsApp</span>
-                </label>
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="Email" />
-                  <span class="channel-name">Email</span>
-                </label>
-                <label class="channel-option">
-                  <input type="checkbox" name="channels" value="LinkedIn" />
-                  <span class="channel-name">LinkedIn</span>
-                </label>
-                <label class="channel-option">
-                  <input id="ch-other" type="checkbox" name="channels" value="Other" />
-                  <span class="channel-name">Other</span>
-                </label>
-              </div>
+  <div class="field-grid mt-12">
+    <div>
+      <label class="label">Contact email</label>
+      <input class="input" type="email" name="email" required />
+    </div>
+    <div>
+      <label class="label">Contact name (optional)</label>
+      <input class="input" type="text" name="contact_name" />
+    </div>
+  </div>
 
-              <div id="otherWrap" class="mt-12" style="display:none">
-                <input type="text" name="channels_other" placeholder="Add another platform…" />
-                <p class="note">e.g., Telegram, WeChat, Instagram DM, custom CRM inbox …</p>
-              </div>
-            </div>
-          </div>
+  <div class="field-grid one mt-12">
+    <div>
+      <label class="label">Preferred channels</label>
+      <div class="channel-group">
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="Website Widget" />
+          <span class="channel-name">Website Widget</span>
+        </label>
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="WhatsApp" />
+          <span class="channel-name">WhatsApp</span>
+        </label>
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="Email" />
+          <span class="channel-name">Email</span>
+        </label>
+        <label class="channel-option">
+          <input type="checkbox" name="channels" value="LinkedIn" />
+          <span class="channel-name">LinkedIn</span>
+        </label>
+        <label class="channel-option">
+          <input id="ch-other" type="checkbox" name="channels" value="Other" />
+          <span class="channel-name">Other</span>
+        </label>
+      </div>
 
-          <div class="field-grid one mt-18">
-            <div>
-              <label class="label">What should the Light Agent handle?</label>
-              <textarea name="notes" placeholder="Short description: FAQs, basic lead capture, calendar link, tone…"></textarea>
-            </div>
-          </div>
-
-          <button class="btn btn-primary mt-18" type="submit">Submit</button>
-          <p class="note">We’ll review and send your access link by email.</p>
-        </form>
+      <div id="otherWrap" class="mt-12" style="display:none">
+        <input class="input" type="text" name="channels_other" placeholder="Add another platform…" />
+        <p class="note">e.g., Telegram, WeChat, Instagram DM, custom CRM inbox …</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <script>
-    const chOther = document.getElementById('ch-other');
-    const otherWrap = document.getElementById('otherWrap');
-    if (chOther) chOther.addEventListener('change', () => {
-      otherWrap.style.display = chOther.checked ? 'block' : 'none';
-    });
-  </script>
-</body>
-</html>
+  <div class="field-grid one mt-18">
+    <div>
+      <label class="label">What should the Light Agent handle?</label>
+      <textarea class="input" name="notes" placeholder="Short description: FAQs, basic lead capture, calendar link, tone…"></textarea>
+    </div>
+  </div>
+
+  <button class="btn btn-primary mt-18" type="submit">Submit</button>
+  <p class="note">We’ll review and send your access link by email.</p>
+</form>
+
+<script>
+  (function () {
+    const other = document.getElementById('ch-other');
+    const wrap  = document.getElementById('otherWrap');
+    if (other && wrap) {
+      wrap.style.display = other.checked ? 'block' : 'none';
+      other.addEventListener('change', () => {
+        wrap.style.display = other.checked ? 'block' : 'none';
+      });
+    }
+  })();
