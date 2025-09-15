@@ -342,3 +342,66 @@ body.bg{
 .mt-12{margin-top:12px}
 .mt-18{margin-top:18px}
 .note{color:var(--sub);font-size:13px;margin-top:8px}
+/* ===== Mobile polish (<=640px) for forms & pricing ===== */
+@media (max-width: 640px){
+
+  /* Container & spacing */
+  .section { padding: 32px 0; }
+  .container { padding: 0 16px; }
+
+  /* Headings */
+  .h1 { font-size: 32px; line-height: 1.15; margin: 8px 0 10px; }
+  .h2 { font-size: 22px; margin-bottom: 12px; }
+  .form-head .form-desc,
+  .sub.small { font-size: 13px; }
+
+  /* Form shell */
+  .form-wrap { gap: 14px; }
+  .form-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  /* Inputs */
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="url"],
+  .form input[type="date"],
+  .form select,
+  .form textarea {
+    font-size: 16px;         /* verhindert iOS-Zoom */
+    padding: 12px 12px;
+    min-height: 44px;        /* Tap target */
+  }
+  .form textarea { min-height: 110px; }
+
+  /* 2-Spalten Felder → 1 Spalte */
+  .field-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  .field-grid.one { grid-template-columns: 1fr; }
+
+  /* Channel pills – 1 Spalte, große Klickfläche */
+  .channel-group { grid-template-columns: 1fr; gap: 10px; padding: 10px; }
+  .channel-option { padding: 12px 14px; }
+  .channel-option input{ width:20px; height:20px; border-radius:6px; }
+  .channel-name{ font-size:15px; }
+
+  /* Buttons */
+  .btn{ width:100%; text-align:center; padding:14px 16px; }
+  .btn-primary{ font-weight:800; }
+
+  /* Pricing cards (Startseite) */
+  .plans-grid{ grid-template-columns: 1fr; gap: 16px; }
+  .plan-card{ padding:18px; border-radius:14px; }
+  .plan-amount{ font-size:24px; }
+  .plan-card.popular{ transform:none; box-shadow:none; }
+
+  /* Info notes */
+  .note{ font-size:12px; opacity:.85; }
+}
+
+/* Slightly larger phones (<=768px) – entspannter Zeilenfall */
+@media (max-width: 768px){
+  .h1{ font-size: 36px; }
+  .form-card{ padding: 18px; }
+  .plans-grid{ grid-template-columns: 1fr; }
+}
