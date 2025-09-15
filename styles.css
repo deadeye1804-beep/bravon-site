@@ -477,3 +477,7 @@ img, video { max-width: 100%; height: auto; display: block; }
   color: var(--accent-2); /* heller Blauton */
   font-weight: 600;
 }
+.brand-name .ai {
+  color: var(--accent-2);   /* dein helleres Blau */
+  font-weight: 700;         /* gleiche Dicke wie der Rest vom Logo */
+}
