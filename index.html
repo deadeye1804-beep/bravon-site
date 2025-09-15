@@ -3,278 +3,263 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bravon — AI Lead Agents</title>
-  <meta name="description" content="Bravon builds AI Lead Generation & Sales Agents that qualify, follow up and book meetings 24/7." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Bravon AI — More Deals. Less Busywork.</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bravon.it.com/" />
+
+  <!-- Meta -->
+  <meta name="description" content="Bravon builds AI Lead Generation & Sales Agents that qualify, follow up and book meetings — synced to your CRM." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bravon AI" />
+  <meta property="og:title" content="More Deals. Less Busywork. | Bravon AI" />
+  <meta property="og:description" content="AI agents that qualify leads, follow up, and book meetings — 24/7." />
+  <meta property="og:url" content="https://bravon.it.com/" />
+  <meta property="og:image" content="https://bravon.it.com/assets/og-cover.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="More Deals. Less Busywork. | Bravon AI" />
+  <meta name="twitter:description" content="AI agents that qualify leads, follow up, and book meetings — 24/7." />
+  <meta name="twitter:image" content="https://bravon.it.com/assets/og-cover.jpg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bravon AI",
+    "url": "https://bravon.it.com/",
+    "logo": "https://bravon.it.com/assets/logo.png",
+    "email": "info@bravon.it.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bahnweg 3/20",
+      "postalCode": "2821",
+      "addressLocality": "Lanzenkirchen",
+      "addressCountry": "AT"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer data-domain="bravon.it.com" src="https://plausible.io/js/script.js"></script>
 </head>
-<body>
-  <!-- ================= NAV ================= -->
+<body class="bg">
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <span class="dot"></span>
-        <span>Bravon</span>
-      </div>
-      <nav class="nav-links">
+      <a href="/" class="brand">
+        <span class="brand-dot">⚡</span>
+        <span class="brand-name">Bravon <span class="ai">AI</span></span>
+      </a>
+
+      <nav class="links">
         <a href="#benefits">Benefits</a>
-        <a href="#handle">What we handle</a>
+        <a href="#what-we-handle">What we handle</a>
         <a href="#timeline">Timeline</a>
         <a href="#plans">Plans</a>
+        <a href="demo-light.html" class="btn btn-primary">Free Demo</a>
       </nav>
+
       <div class="nav-cta">
         <a class="btn btn-primary" href="#plans">Get Started</a>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <p class="eyebrow">⚡ AI-POWERED LEAD MACHINES</p>
+    <div class="container">
+      <p class="eyebrow">AI-POWERED LEAD MACHINES</p>
       <h1 class="h1">More Deals. Less Busywork.</h1>
       <p class="sub">
-        We build AI Lead Generation & Sales Agents that work 24/7 — qualifying,
-        following up, booking meetings and syncing to your CRM.
+        We build AI Lead Generation & Sales Agents that work 24/7 — qualifying, following up, booking meetings
+        and syncing to your CRM.
       </p>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="#plans">Launch my Agent</a>
-        <a class="btn btn-ghost" href="#light">Try Free Light Version</a>
+        <a class="btn btn-ghost" href="demo-light.html">Try Free Light Version</a>
       </div>
 
-      <div class="trust">
-        <span>Trusted by modern teams</span>
-        <span class="logos">IPSUM • NOVA • ATLAS • BASE</span>
-      </div>
+      <p class="trust">Trusted by modern teams &nbsp;•&nbsp; IPSUM &nbsp;•&nbsp; NOVA &nbsp;•&nbsp; ATLAS &nbsp;•&nbsp; BASE</p>
     </div>
   </section>
 
-  <!-- ================= BENEFITS ================= -->
+  <!-- BENEFITS -->
   <section id="benefits" class="section">
     <div class="container">
       <h2 class="h2">Why Bravon brings the right leads</h2>
-
-      <div class="grid grid-3">
+      <div class="cards">
         <div class="card">
           <div class="card-icon">⚡</div>
           <h3 class="card-title">Instant Response</h3>
-          <p class="card-sub">No waiting. 24/7 chat & email — in your brand voice.</p>
+          <p class="card-text">No waiting. 24/7 chat & email — in your brand voice.</p>
         </div>
-
         <div class="card">
           <div class="card-icon">🎯</div>
           <h3 class="card-title">Lead Qualification</h3>
-          <p class="card-sub">Need, Budget, Timing & Fit — captured cleanly and prioritized.</p>
+          <p class="card-text">Need, Budget, Timing & Fit — captured cleanly and prioritized.</p>
         </div>
-
         <div class="card">
-          <div class="card-icon">🗓️</div>
+          <div class="card-icon">📅</div>
           <h3 class="card-title">Direct Booking</h3>
-          <p class="card-sub">Calendar integration — qualified leads land straight in your call queue.</p>
+          <p class="card-text">Calendar integration — qualified leads land straight in your call queue.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= WHAT WE HANDLE ================= -->
-  <section id="handle" class="section">
+  <!-- WHAT WE HANDLE -->
+  <section id="what-we-handle" class="section muted">
     <div class="container">
       <h2 class="h2">What Bravon handles for you</h2>
 
-    <div class="grid grid-3">
-      <div class="card">
-        <h3 class="card-title">Website Widget in 2 minutes</h3>
-        <ul class="list">
-          <li>✅ No-code embed</li>
-          <li>✅ Multilingual (EN/DE ...)</li>
-          <li>✅ GDPR-friendly</li>
-        </ul>
-      </div>
+      <div class="list">
+        <div class="list-box">
+          <h4>Website Widget in 2 minutes</h4>
+          <ul>
+            <li>✅ No-code embed</li>
+            <li>✅ Multilingual (EN/DE …)</li>
+            <li>✅ GDPR-friendly</li>
+          </ul>
+        </div>
 
-      <div class="card">
-        <h3 class="card-title">CRM & Inbox</h3>
-        <ul class="list">
-          <li>✅ HubSpot / Pipedrive sync</li>
-          <li>✅ Deal / Stage updates</li>
-          <li>✅ Transcripts & tags</li>
-        </ul>
-      </div>
+        <div class="list-box">
+          <h4>CRM & Inbox</h4>
+          <ul>
+            <li>✅ HubSpot / Pipedrive sync</li>
+            <li>✅ Deal / Stage updates</li>
+            <li>✅ Transcripts & tags</li>
+          </ul>
+        </div>
 
-      <div class="card">
-        <h3 class="card-title">Follow-ups</h3>
-        <ul class="list">
-          <li>✅ Email & SMS reminders</li>
-          <li>✅ Sequences after qualification</li>
-          <li>✅ “No-show” recovery</li>
-        </ul>
+        <div class="list-box">
+          <h4>Follow-ups</h4>
+          <ul>
+            <li>✅ Email & SMS reminders</li>
+            <li>✅ Sequences after qualification</li>
+            <li>✅ “No-show” recovery</li>
+          </ul>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
-  <!-- ================= TIMELINE ================= -->
+  <!-- TIMELINE -->
   <section id="timeline" class="section">
     <div class="container">
       <h2 class="h2">Live in 48–72 hours</h2>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="pill">1</div>
-          <h3 class="card-title">Kickoff & Voice</h3>
-          <p class="card-sub">We define audiences, FAQs, tone & qualification logic.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Kickoff & Voice</h4>
+          <p>We define audiences, FAQs, tone & qualification logic.</p>
         </div>
-
-        <div class="card">
-          <div class="pill">2</div>
-          <h3 class="card-title">Setup & Integrations</h3>
-          <p class="card-sub">Widget embed, Calendar, CRM sync, Email/SMS.</p>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Setup & Integrations</h4>
+          <p>Widget embed, Calendar, CRM sync, Email/SMS.</p>
         </div>
-
-        <div class="card">
-          <div class="pill">3</div>
-          <h3 class="card-title">Go-Live & Optimization</h3>
-          <p class="card-sub">Polish with live data — scoring, tuning, reporting.</p>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Go-Live & Optimization</h4>
+          <p>Polish with live data — scoring, tuning, reporting.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= PLANS ================= -->
-  <section id="plans" class="section">
+  <!-- PLANS -->
+  <section id="plans" class="section plans">
     <div class="container">
       <h2 class="h2">Choose your plan</h2>
-      <p class="muted">Simple monthly plans. Cancel or upgrade anytime.</p>
+      <p class="sub small">Automate your leads, chatbots & outreach with Bravon</p>
 
-      <div class="grid grid-3 pricing">
+      <div class="plans-grid">
         <!-- Launch -->
-        <div class="card price">
-          <div class="card-icon">🚀</div>
-          <h3 class="card-title">Launch</h3>
-          <p class="price-tag">€499 <span>/ month</span></p>
-          <ul class="list">
-            <li>Website widget (1 domain)</li>
-            <li>Basic FAQ & lead form</li>
-            <li>Calendar booking</li>
-            <li>Weekly recap</li>
+        <article class="plan-card" aria-label="Launch plan">
+          <div class="plan-head">
+            <span class="plan-emoji">🚀</span>
+            <h3 class="plan-title">Launch</h3>
+          </div>
+          <div class="plan-price">
+            <span class="plan-amount">€1,500–€3,500</span>
+            <span class="plan-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li>AI lead processing (base)</li>
+            <li>Website chatbot (1 domain)</li>
+            <li>Basic CRM sync & email follow-ups</li>
+            <li>Standard support</li>
           </ul>
-      <a class="btn btn-primary" href="demo-request.html?plan=launch">Get my demo link</a>
-        </div>
+          <a class="btn btn-primary" href="https://calendly.com/bravon-info/30min" target="_blank">Start now</a>
+        </article>
 
         <!-- Growth -->
-        <div class="card price price-popular">
-          <div class="badge">Growth Popular</div>
-          <div class="card-icon">🌱</div>
-          <h3 class="card-title">Growth</h3>
-          <p class="price-tag">€999 <span>/ month</span></p>
-          <ul class="list">
-            <li>Multi-channel follow-ups</li>
-            <li>HubSpot / Pipedrive sync</li>
-            <li>Playbooks & scoring</li>
-            <li>Bi-weekly optimization</li>
+        <article class="plan-card popular" aria-label="Growth plan">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-head">
+            <span class="plan-emoji">🌱</span>
+            <h3 class="plan-title">Growth</h3>
+          </div>
+          <div class="plan-price">
+            <span class="plan-amount">€3,500–€7,000</span>
+            <span class="plan-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li>Advanced AI lead processing</li>
+            <li>Multi-channel: WhatsApp & LinkedIn</li>
+            <li>Automated follow-ups & custom dashboard</li>
+            <li>Priority support</li>
           </ul>
-          <a class="btn btn-primary" href="growth-intake.html?plan=growth">Configure my agent</a>
-        </div>
+          <a class="btn btn-primary" href="https://calendly.com/bravon-info/30min" target="_blank">Start now</a>
+        </article>
 
         <!-- Scale -->
-        <div class="card price">
-          <div class="card-icon">🏆</div>
-          <h3 class="card-title">Scale</h3>
-          <p class="price-tag">€1499 <span>/ month</span></p>
-          <ul class="list">
-            <li>All channels + sequences</li>
-            <li>Custom workflows & tags</li>
-            <li>Priority support</li>
-            <li>Detailed reporting</li>
-          </ul>
-      <a class="btn btn-primary" href="scale.html?plan=scale">Request async proposal</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CTA STRIP (no "Book Intro") ================= -->
-  <section id="book" class="cta-strip">
-    <div class="container cta-inner">
-      <h3 class="cta-title">Ready to turn visitors into meetings?</h3>
-      <p class="cta-sub">We’ll show you how we get you live in 3 days.</p>
-      <div class="cta-actions">
-        <a class="btn btn-ghost" href="mailto:info@bravon.com">info@bravon.com</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FREE LIGHT VERSION (row) ================= -->
-  <section id="light" class="light-row">
-    <div class="container light-inner">
-      <button class="light-toggle" id="lightToggle" aria-expanded="false">
-        <span class="spark">✦</span>
-        <strong>Free Light Version</strong>
-        <span class="sep">—</span>
-        <span class="hint">click to configure a quick chatbot</span>
-        <span class="chev" aria-hidden="true">▾</span>
-      </button>
-
-      <div class="light-panel" id="lightPanel" hidden>
-        <form id="lightForm" class="light-form" onsubmit="return false;">
-          <label class="light-label" for="lightText">Describe what the bot should handle (no lead scoring / no direct booking in Light):</label>
-          <textarea id="lightText" class="light-input" rows="4" placeholder="E.g., Answer FAQs about pricing & onboarding in EN/DE, tone = friendly, short answers…"></textarea>
-
-          <div class="light-row-inline">
-            <label for="lightLang" class="sr-only">Language</label>
-            <select id="lightLang" class="light-select">
-              <option value="en">English</option>
-              <option value="de">Deutsch</option>
-            </select>
-
-            <button id="lightGenerate" class="btn btn-primary" type="button">Generate Demo</button>
+        <article class="plan-card" aria-label="Scale plan">
+          <div class="plan-head">
+            <span class="plan-emoji">📈</span>
+            <h3 class="plan-title">Scale</h3>
           </div>
-
-          <p id="lightResult" class="light-result" hidden></p>
-        </form>
+          <div class="plan-price">
+            <span class="plan-amount">€10,000–€25,000</span>
+            <span class="plan-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li>Full WhatsApp & LinkedIn automation</li>
+            <li>API integrations & custom lead routing</li>
+            <li>Dedicated account manager</li>
+            <li>SLA priority support</li>
+            <li>+ Revenue share options</li>
+          </ul>
+          <a class="btn btn-primary" href="https://calendly.com/bravon-info/30min" target="_blank">Start now</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
       <div>© 2025 Bravon — AI Lead Assistant</div>
       <nav class="footer-links">
         <a href="#plans">Plans</a>
-        <a href="mailto:info@bravon.com">Contact</a>
-        <a href="#">Imprint soon</a>
+        <a href="imprint.html">Imprint</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:info@bravon.it.com">Contact</a>
       </nav>
     </div>
   </footer>
-
-  <script>
-    // Toggle Light panel
-    const toggle = document.getElementById('lightToggle');
-    const panel  = document.getElementById('lightPanel');
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      panel.hidden = open;
-      toggle.querySelector('.chev').textContent = open ? '▾' : '▴';
-    });
-
-    // Fake demo generation
-    const genBtn = document.getElementById('lightGenerate');
-    const txt    = document.getElementById('lightText');
-    const lang   = document.getElementById('lightLang');
-    const out    = document.getElementById('lightResult');
-
-    genBtn.addEventListener('click', () => {
-      const spec = (txt.value || 'Generic FAQ helper').trim().slice(0, 140);
-      const l    = lang.value;
-      const stamp = Math.random().toString(36).slice(2, 8);
-      const url  = `https://demo.bravon.com/light/${l}/${stamp}`;
-      out.innerHTML = `✅ Demo generated (placeholder): <a href="${url}" target="_blank" rel="noopener">${url}</a><br/><span class="muted">Note: Light version excludes lead scoring & direct booking.</span>`;
-      out.hidden = false;
-    });
-  </script>
 </body>
 </html>
-
