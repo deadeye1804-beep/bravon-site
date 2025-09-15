@@ -374,3 +374,50 @@ img,video{max-width:100%;height:auto;display:block}
   color: var(--accent-2);
   font-weight:800;
 }
+/* --- Mobile button hardening (force pill styles) -------------------- */
+@media (max-width: 640px){
+
+  /* 1) Make *any* hero action links look like our buttons */
+  .hero-actions a {
+    display: inline-block;
+    text-decoration: none !important;
+    font-weight: 800;
+    border-radius: 10px;
+    padding: 12px 16px;
+    line-height: 1.1;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* primary = first link */
+  .hero-actions a:first-child{
+    background: var(--accent);
+    color: #0b1220;
+    border: none;
+  }
+  /* ghost = second link */
+  .hero-actions a + a{
+    background: #111827;
+    color: var(--text);
+    border: 1px solid #334155;
+    margin-left: 8px;
+  }
+  .hero-actions a:hover{ filter: brightness(1.05); }
+  .hero-actions a + a:hover{ border-color:#3b4a66; background:#1a2335; }
+
+  /* 2) Top-right nav CTA should be a pill too (even if classes are missing) */
+  .nav-cta a{
+    display: inline-block;
+    background: var(--accent);
+    color: #0b1220 !important;
+    border-radius: 10px;
+    padding: 10px 14px;
+    text-decoration: none !important;
+    font-weight: 800;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* 3) Kill default link underlines in hero/nav just in case */
+  .hero a, .nav a { text-decoration: none; }
+}
+
+/* Make sure *buttons anywhere* never get underlined */
+.btn, .btn-primary, .btn-ghost, .btn-pill { text-decoration: none !important; }
