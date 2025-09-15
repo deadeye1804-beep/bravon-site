@@ -15,7 +15,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css?v=2025-09-15-3">
 </head>
 <body class="bg">
   <!-- NAV -->
@@ -39,24 +39,29 @@
   </header>
 
   <!-- HERO -->
-  <section id="landing" class="hero">
-    <div class="container">
-      <p class="eyebrow">AI-POWERED LEAD MACHINES</p>
-      <h1 class="h1">More Deals. Less Busywork.</h1>
-      <p class="sub">
-        We build AI Lead Generation & Sales Agents that work 24/7 — qualifying, following up, booking meetings and syncing to your CRM.
-      </p>
+  <section id="hero" class="hero">
+  <div class="container">
+    <p class="eyebrow">⚡ AI-POWERED LEAD MACHINES</p>
+    <h1 class="h1">More Deals. Less Busywork.</h1>
+    <p class="sub">
+      We build AI Lead Generation & Sales Agents that work 24/7 — qualifying, following up, booking meetings, and syncing to your CRM.
+    </p>
 
-      <div class="hero-actions">
-       <a class="btn btn-primary" href="#plans">Launch my Agent</a>
-       <a class="btn btn-ghost" href=""https://www.bravon.it.com/demo-request?plan=launch">
-  Try Light Version
-
-      </div>
-
-      <p class="trust">Trusted by modern teams &nbsp;•&nbsp; IPSUM &nbsp;•&nbsp; NOVA &nbsp;•&nbsp; ATLAS &nbsp;•&nbsp; BASE</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://www.bravon.it.com/demo-request?plan=launch">
+        Launch my Agent
+      </a>
+      <a class="btn btn-ghost" href="https://www.bravon.it.com/demo-request?plan=launch">
+        Try Free Light Version
+      </a>
     </div>
-  </section>
+
+    <div class="trust">
+      Trusted by modern teams • IPSUM • NOVA • ATLAS • BASE
+    </div>
+  </div>
+</section>
+
 
   <!-- BENEFITS -->
   <section id="benefits" class="section">
@@ -143,83 +148,59 @@
   </section>
 
   <!-- PLANS -->
-  <section id="plans" class="section plans">
-    <div class="container">
-      <h2 class="h2">Choose your plan</h2>
-      <p class="sub small">Automate your leads, chatbots & outreach with Bravon</p>
+  <section id="plans" class="plans">
+  <div class="container">
+    <h2 class="h2">Choose your plan</h2>
+    <p class="sub">Automate your leads, chatbots & outreach with Bravon</p>
 
-      <div class="plans-grid">
-        <!-- Launch -->
-        <article class="plan-card" aria-label="Launch plan">
-          <div class="plan-head">
-            <span class="plan-emoji">🚀</span>
-            <h3 class="plan-title">Launch</h3>
-          </div>
+    <div class="plans-grid">
+      <!-- Launch -->
+      <div class="plan-card">
+        <h3>🚀 Launch</h3>
+        <p class="price">€1,500–€3,500 /month</p>
+        <ul>
+          <li>AI lead processing (base)</li>
+          <li>Website chatbot (1 domain)</li>
+          <li>Basic CRM sync & email follow-ups</li>
+          <li>Standard support</li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.bravon.it.com/demo-request?plan=launch">
+          Start now
+        </a>
+      </div>
 
-          <div class="plan-price">
-            <span class="plan-amount">€1,500–€3,500</span>
-            <span class="plan-period">/month</span>
-          </div>
+      <!-- Growth -->
+      <div class="plan-card popular">
+        <h3>🌱 Growth <span class="badge">Most Popular</span></h3>
+        <p class="price">€3,500–€7,000 /month</p>
+        <ul>
+          <li>Advanced AI lead processing</li>
+          <li>Multi-channel: WhatsApp & LinkedIn</li>
+          <li>Automated follow-ups & custom dashboard</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.bravon.it.com/demo-request?plan=growth">
+          Start now
+        </a>
+      </div>
 
-          <ul class="plan-features">
-            <li>AI lead processing (base)</li>
-            <li>Website chatbot (1 domain)</li>
-            <li>Basic CRM sync & email follow-ups</li>
-            <li>Standard support</li>
-          </ul>
-
-          <a class="btn btn-primary" href="demo-request.html?plan=launch">Start now</a>
-        </article>
-
-        <!-- Growth (featured) -->
-        <article class="plan-card popular" aria-label="Growth plan">
-          <div class="plan-badge">Most Popular</div>
-
-          <div class="plan-head">
-            <span class="plan-emoji">🌱</span>
-            <h3 class="plan-title">Growth</h3>
-          </div>
-
-          <div class="plan-price">
-            <span class="plan-amount">€3,500–€7,000</span>
-            <span class="plan-period">/month</span>
-          </div>
-
-          <ul class="plan-features">
-            <li>Advanced AI lead processing</li>
-            <li>Multi-channel: WhatsApp & LinkedIn</li>
-            <li>Automated follow-ups & custom dashboard</li>
-            <li>Priority support</li>
-          </ul>
-
-          <a class="btn btn-primary" href="growth-intake.html?plan=growth">Start now</a>
-        </article>
-
-        <!-- Scale -->
-        <article class="plan-card" aria-label="Scale plan">
-          <div class="plan-head">
-            <span class="plan-emoji">📈</span>
-            <h3 class="plan-title">Scale</h3>
-          </div>
-
-          <div class="plan-price">
-            <span class="plan-amount">€10,000–€25,000</span>
-            <span class="plan-period">/month</span>
-          </div>
-
-          <ul class="plan-features">
-            <li>Full WhatsApp & LinkedIn automation</li>
-            <li>API integrations & custom lead routing</li>
-            <li>Dedicated account manager</li>
-            <li>SLA priority support</li>
-            <li>+ Revenue share options</li>
-          </ul>
-
-          <a class="btn btn-primary" href="scale.html?plan=scale">Start now</a>
-        </article>
+      <!-- Scale -->
+      <div class="plan-card">
+        <h3>📈 Scale</h3>
+        <p class="price">€10,000–€25,000 /month</p>
+        <ul>
+          <li>Full WhatsApp & LinkedIn automation</li>
+          <li>API integrations & custom lead routing</li>
+          <li>Dedicated account manager</li>
+          <li>SLA priority support</li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.bravon.it.com/demo-request?plan=scale">
+          Start now
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- GET STARTED anchor (für Buttons) -->
   <div id="get-started"></div>
