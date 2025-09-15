@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bravon – Demo Request</title>
+  <title>Bravon – Light Agent Request</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg">
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand"><span class="dot"></span><span>Bravon AI</span></div>
+      <a class="brand" href="index.html"><span class="dot"></span><span class="brand-name">Bravon <span class="ai">AI</span></span></a>
     </div>
   </header>
 
@@ -18,19 +19,85 @@
       <h1 class="h1">Request your Light Agent</h1>
       <p class="sub">Fill out this quick form and we’ll configure your Light Version Agent.</p>
 
-      <form name="demo-request" method="POST" data-netlify="true" class="form">
+      <form name="demo-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="form">
         <input type="hidden" name="form-name" value="demo-request" />
+        <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
 
-        <label>Company <input type="text" name="company" required /></label>
-        <label>Website <input type="url" name="website" required /></label>
-        <label>Email <input type="email" name="email" required /></label>
-        <label>Preferred Channels <input type="text" name="channels" placeholder="Chat, WhatsApp, LinkedIn…" /></label>
-        <label>Language <input type="text" name="language" placeholder="EN, DE…" /></label>
-        <label>Notes <textarea name="notes" rows="4"></textarea></label>
+        <div class="row">
+          <div>
+            <label>Company</label>
+            <input class="input" type="text" name="company" required />
+          </div>
+          <div>
+            <label>Website</label>
+            <input class="input" type="url" name="website" placeholder="https://…" required />
+          </div>
+        </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="row">
+          <div>
+            <label>Contact email</label>
+            <input class="input" type="email" name="email" required />
+          </div>
+          <div>
+            <label>Contact name (optional)</label>
+            <input class="input" type="text" name="contact_name" />
+          </div>
+        </div>
+
+        <div class="row full mtop">
+          <div>
+            <label>Preferred channels</label>
+            <div class="channel-group">
+              <label class="channel-option">
+                <input type="checkbox" name="channels" value="Website Widget" />
+                <span class="channel-name">Website Widget</span>
+              </label>
+              <label class="channel-option">
+                <input type="checkbox" name="channels" value="WhatsApp" />
+                <span class="channel-name">WhatsApp</span>
+              </label>
+              <label class="channel-option">
+                <input type="checkbox" name="channels" value="Email" />
+                <span class="channel-name">Email</span>
+              </label>
+              <label class="channel-option">
+                <input type="checkbox" name="channels" value="LinkedIn" />
+                <span class="channel-name">LinkedIn</span>
+              </label>
+              <label class="channel-option">
+                <input id="ch-other" type="checkbox" name="channels" value="Other" />
+                <span class="channel-name">Other</span>
+              </label>
+            </div>
+
+            <div id="otherWrap" class="mtop" style="display:none">
+              <input class="input" type="text" name="channels_other" placeholder="Add another platform…" />
+              <p class="hint">Example: Telegram, WeChat, Instagram DM, custom CRM inbox …</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row full mtop">
+          <div>
+            <label>What should the Light Agent handle?</label>
+            <textarea class="textarea" name="notes" placeholder="Short description: FAQs, basic lead capture, calendar link, tone…"></textarea>
+          </div>
+        </div>
+
+        <button class="btn btn-primary mtop" type="submit">Submit</button>
+        <p class="success-note">We’ll review and send your access link by email.</p>
       </form>
     </div>
   </section>
+
+  <script>
+    // Show "Other" input when checked
+    const chOther = document.getElementById('ch-other');
+    const otherWrap = document.getElementById('otherWrap');
+    if (chOther) chOther.addEventListener('change', () => {
+      otherWrap.style.display = chOther.checked ? 'block' : 'none';
+    });
+  </script>
 </body>
 </html>

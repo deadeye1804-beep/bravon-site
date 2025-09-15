@@ -9,27 +9,75 @@
 <body class="bg">
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand"><span class="dot"></span><span>Bravon AI</span></div>
+      <a class="brand" href="index.html"><span class="dot"></span><span class="brand-name">Bravon <span class="ai">AI</span></span></a>
     </div>
   </header>
 
   <section class="section">
     <div class="container">
       <h1 class="h1">Growth Plan Setup</h1>
-      <p class="sub">Thank you for your payment! Please complete your intake below so we can configure your Agent.</p>
+      <p class="sub">Thanks for your payment. Tell us where to connect and what to automate first.</p>
 
-      <form name="growth-intake" method="POST" data-netlify="true" class="form">
+      <form name="growth-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="form">
         <input type="hidden" name="form-name" value="growth-intake" />
+        <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
 
-        <label>CRM <input type="text" name="crm" placeholder="HubSpot, Pipedrive…" /></label>
-        <label>Calendar Link <input type="url" name="calendar" /></label>
-        <label>Preferred Channels <input type="text" name="channels" /></label>
-        <label>Approx. Volume <input type="text" name="volume" /></label>
-        <label>Voice & Tone <textarea name="tone" rows="3"></textarea></label>
+        <div class="row">
+          <div>
+            <label>CRM</label>
+            <input class="input" type="text" name="crm" placeholder="HubSpot, Pipedrive…" />
+          </div>
+          <div>
+            <label>Calendar link</label>
+            <input class="input" type="url" name="calendar" placeholder="https://cal.com/…" />
+          </div>
+        </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="row full mtop">
+          <div>
+            <label>Channels to activate</label>
+            <div class="channel-group">
+              <label class="channel-option"><input type="checkbox" name="channels" value="Website Widget"><span class="channel-name">Website Widget</span></label>
+              <label class="channel-option"><input type="checkbox" name="channels" value="WhatsApp"><span class="channel-name">WhatsApp</span></label>
+              <label class="channel-option"><input type="checkbox" name="channels" value="Email"><span class="channel-name">Email</span></label>
+              <label class="channel-option"><input type="checkbox" name="channels" value="LinkedIn"><span class="channel-name">LinkedIn</span></label>
+              <label class="channel-option"><input id="g-other" type="checkbox" name="channels" value="Other"><span class="channel-name">Other</span></label>
+            </div>
+            <div id="g-otherWrap" class="mtop" style="display:none">
+              <input class="input" type="text" name="channels_other" placeholder="Add another platform…" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>Approx. monthly volume</label>
+            <input class="input" type="text" name="volume" placeholder="e.g. 300–500 inbound / month" />
+          </div>
+          <div>
+            <label>Sales region (optional)</label>
+            <input class="input" type="text" name="region" placeholder="DACH, US, EU…" />
+          </div>
+        </div>
+
+        <div class="row full mtop">
+          <div>
+            <label>Voice & tone / key FAQs</label>
+            <textarea class="textarea" name="tone" placeholder="Short brand voice notes + 3–5 essential FAQs…"></textarea>
+          </div>
+        </div>
+
+        <button class="btn btn-primary mtop" type="submit">Send</button>
       </form>
     </div>
   </section>
+
+  <script>
+    const gOther = document.getElementById('g-other');
+    const gOtherWrap = document.getElementById('g-otherWrap');
+    if (gOther) gOther.addEventListener('change', () => {
+      gOtherWrap.style.display = gOther.checked ? 'block' : 'none';
+    });
+  </script>
 </body>
 </html>
