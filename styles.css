@@ -473,3 +473,7 @@ img, video { max-width: 100%; height: auto; display: block; }
 .brand-name .ai {
   color: #3b82f6; /* dein Blau */
 }
+.brand-name .ai {
+  color: var(--accent-2); /* heller Blauton */
+  font-weight: 600;
+}
