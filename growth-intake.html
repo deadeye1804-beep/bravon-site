@@ -3,79 +3,143 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bravon – Growth Intake</title>
+  <title>Bravon – Configure Growth</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg">
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html"><span class="dot"></span><span class="brand-name">Bravon <span class="ai">AI</span></span></a>
+      <a class="brand" href="index.html">
+        <span class="dot"></span><span class="brand-name">Bravon <span class="ai">AI</span></span>
+      </a>
     </div>
   </header>
 
   <section class="section">
-    <div class="container">
-      <h1 class="h1">Growth Plan Setup</h1>
-      <p class="sub">Thanks for your payment. Tell us where to connect and what to automate first.</p>
+    <div class="container form-wrap">
+      <div class="form-head">
+        <h1 class="h1">Configure your Growth plan</h1>
+        <p class="form-desc">Give us the essentials. We’ll configure your multi-channel agent and follow up asynchronously if anything is missing.</p>
+      </div>
 
-      <form name="growth-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="form">
-        <input type="hidden" name="form-name" value="growth-intake" />
-        <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <div class="form-card">
+        <form name="growth-intake" method="POST" data-netlify="true"
+              netlify-honeypot="bot-field" action="/thanks.html" class="form">
+          <input type="hidden" name="form-name" value="growth-intake" />
+          <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
 
-        <div class="row">
-          <div>
-            <label>CRM</label>
-            <input class="input" type="text" name="crm" placeholder="HubSpot, Pipedrive…" />
-          </div>
-          <div>
-            <label>Calendar link</label>
-            <input class="input" type="url" name="calendar" placeholder="https://cal.com/…" />
-          </div>
-        </div>
-
-        <div class="row full mtop">
-          <div>
-            <label>Channels to activate</label>
-            <div class="channel-group">
-              <label class="channel-option"><input type="checkbox" name="channels" value="Website Widget"><span class="channel-name">Website Widget</span></label>
-              <label class="channel-option"><input type="checkbox" name="channels" value="WhatsApp"><span class="channel-name">WhatsApp</span></label>
-              <label class="channel-option"><input type="checkbox" name="channels" value="Email"><span class="channel-name">Email</span></label>
-              <label class="channel-option"><input type="checkbox" name="channels" value="LinkedIn"><span class="channel-name">LinkedIn</span></label>
-              <label class="channel-option"><input id="g-other" type="checkbox" name="channels" value="Other"><span class="channel-name">Other</span></label>
+          <!-- Company / Website -->
+          <div class="field-grid">
+            <div>
+              <label class="label">Company</label>
+              <input type="text" name="company" required />
             </div>
-            <div id="g-otherWrap" class="mtop" style="display:none">
-              <input class="input" type="text" name="channels_other" placeholder="Add another platform…" />
+            <div>
+              <label class="label">Website</label>
+              <input type="url" name="website" placeholder="https://…" required />
             </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div>
-            <label>Approx. monthly volume</label>
-            <input class="input" type="text" name="volume" placeholder="e.g. 300–500 inbound / month" />
+          <!-- Email / Contact -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">Contact email</label>
+              <input type="email" name="email" required />
+            </div>
+            <div>
+              <label class="label">Contact name (optional)</label>
+              <input type="text" name="contact_name" />
+            </div>
           </div>
-          <div>
-            <label>Sales region (optional)</label>
-            <input class="input" type="text" name="region" placeholder="DACH, US, EU…" />
-          </div>
-        </div>
 
-        <div class="row full mtop">
-          <div>
-            <label>Voice & tone / key FAQs</label>
-            <textarea class="textarea" name="tone" placeholder="Short brand voice notes + 3–5 essential FAQs…"></textarea>
+          <!-- CRM / Calendar -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">CRM</label>
+              <select name="crm" required>
+                <option value="">Select…</option>
+                <option>HubSpot</option>
+                <option>Pipedrive</option>
+                <option>Salesforce</option>
+                <option>None / Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="label">Booking calendar link</label>
+              <input type="url" name="calendar_url" placeholder="https://calendly.com/…" />
+            </div>
           </div>
-        </div>
 
-        <button class="btn btn-primary mtop" type="submit">Send</button>
-      </form>
+          <!-- Channels -->
+          <div class="field-grid one mt-12">
+            <div>
+              <label class="label">Preferred channels</label>
+              <div class="channel-group">
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="Website Widget" />
+                  <span class="channel-name">Website Widget</span>
+                </label>
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="WhatsApp" />
+                  <span class="channel-name">WhatsApp</span>
+                </label>
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="Email" />
+                  <span class="channel-name">Email</span>
+                </label>
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="LinkedIn" />
+                  <span class="channel-name">LinkedIn</span>
+                </label>
+                <label class="channel-option">
+                  <input id="g-other" type="checkbox" name="channels" value="Other" />
+                  <span class="channel-name">Other</span>
+                </label>
+              </div>
+
+              <div id="g-otherWrap" class="mt-12" style="display:none">
+                <input type="text" name="channels_other" placeholder="Add another platform…" />
+                <p class="note">e.g., Telegram, WeChat, Instagram DM, custom inbox …</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use cases / Volume -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">Use cases</label>
+              <textarea name="use_cases" placeholder="Lead qualification criteria, follow-up rules, tone…"></textarea>
+            </div>
+            <div>
+              <label class="label">Expected monthly lead volume</label>
+              <input type="text" name="volume" placeholder="e.g., 150–300" />
+            </div>
+          </div>
+
+          <!-- Routing / Start date -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">Lead routing / fields</label>
+              <textarea name="routing" placeholder="Required CRM fields, pipeline/stage, owners…"></textarea>
+            </div>
+            <div>
+              <label class="label">Preferred start date</label>
+              <input type="date" name="start_date" />
+            </div>
+          </div>
+
+          <button class="btn btn-primary mt-18" type="submit">Submit configuration</button>
+          <p class="note">We’ll confirm by email and send the next steps.</p>
+        </form>
+      </div>
     </div>
   </section>
 
   <script>
     const gOther = document.getElementById('g-other');
     const gOtherWrap = document.getElementById('g-otherWrap');
-    if (gOther) gOther.addEventListener('change', () => {
+    if (gOther) gOther.addEventListener('change', ()=> {
       gOtherWrap.style.display = gOther.checked ? 'block' : 'none';
     });
   </script>

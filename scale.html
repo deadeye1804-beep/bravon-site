@@ -7,75 +7,139 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg">
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html"><span class="dot"></span><span class="brand-name">Bravon <span class="ai">AI</span></span></a>
+      <a class="brand" href="index.html">
+        <span class="dot"></span><span class="brand-name">Bravon <span class="ai">AI</span></span>
+      </a>
     </div>
   </header>
 
   <section class="section">
-    <div class="container">
-      <h1 class="h1">Scale Proposal Request</h1>
-      <p class="sub">Share a few details and we’ll prepare an async proposal tailored to your stack.</p>
+    <div class="container form-wrap">
+      <div class="form-head">
+        <h1 class="h1">Request async proposal — Scale</h1>
+        <p class="form-desc">Tell us your requirements. We’ll reply with a tailored plan, pricing and timeline — no call needed.</p>
+      </div>
 
-      <form name="scale-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="form">
-        <input type="hidden" name="form-name" value="scale-request" />
-        <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <div class="form-card">
+        <form name="scale-request" method="POST" data-netlify="true"
+              netlify-honeypot="bot-field" action="/thanks.html" class="form">
+          <input type="hidden" name="form-name" value="scale-request" />
+          <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
 
-        <div class="row">
-          <div>
-            <label>Company</label>
-            <input class="input" type="text" name="company" required />
-          </div>
-          <div>
-            <label>Contact email</label>
-            <input class="input" type="email" name="email" required />
-          </div>
-        </div>
-
-        <div class="row">
-          <div>
-            <label>Team size</label>
-            <input class="input" type="number" name="team_size" min="1" />
-          </div>
-          <div>
-            <label>Sales region</label>
-            <input class="input" type="text" name="region" placeholder="DACH, US, EU…" />
-          </div>
-        </div>
-
-        <div class="row full mtop">
-          <div>
-            <label>Channels & integrations</label>
-            <div class="channel-group">
-              <label class="channel-option"><input type="checkbox" name="channels" value="Website Widget"><span class="channel-name">Website Widget</span></label>
-              <label class="channel-option"><input type="checkbox" name="channels" value="WhatsApp"><span class="channel-name">WhatsApp</span></label>
-              <label class="channel-option"><input type="checkbox" name="channels" value="Email"><span class="channel-name">Email</span></label>
-              <label class="channel-option"><input type="checkbox" name="channels" value="LinkedIn"><span class="channel-name">LinkedIn</span></label>
-              <label class="channel-option"><input id="s-other" type="checkbox" name="channels" value="Other"><span class="channel-name">Other</span></label>
+          <!-- Company / Website -->
+          <div class="field-grid">
+            <div>
+              <label class="label">Company</label>
+              <input type="text" name="company" required />
             </div>
-            <div id="s-otherWrap" class="mtop" style="display:none">
-              <input class="input" type="text" name="channels_other" placeholder="Add another platform / integration…" />
+            <div>
+              <label class="label">Website</label>
+              <input type="url" name="website" placeholder="https://…" required />
             </div>
           </div>
-        </div>
 
-        <div class="row full mtop">
-          <div>
-            <label>What outcome do you want?</label>
-            <textarea class="textarea" name="goals" placeholder="e.g., 24/7 inbound triage, auto-booking, LinkedIn outreach, lead routing rules…"></textarea>
+          <!-- Email / Contact -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">Contact email</label>
+              <input type="email" name="email" required />
+            </div>
+            <div>
+              <label class="label">Contact name (optional)</label>
+              <input type="text" name="contact_name" />
+            </div>
           </div>
-        </div>
 
-        <button class="btn btn-primary mtop" type="submit">Request proposal</button>
-      </form>
+          <!-- Channels -->
+          <div class="field-grid one mt-12">
+            <div>
+              <label class="label">Channels to automate</label>
+              <div class="channel-group">
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="Website Widget" />
+                  <span class="channel-name">Website Widget</span>
+                </label>
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="WhatsApp" />
+                  <span class="channel-name">WhatsApp</span>
+                </label>
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="Email" />
+                  <span class="channel-name">Email</span>
+                </label>
+                <label class="channel-option">
+                  <input type="checkbox" name="channels" value="LinkedIn" />
+                  <span class="channel-name">LinkedIn</span>
+                </label>
+                <label class="channel-option">
+                  <input id="s-other" type="checkbox" name="channels" value="Other" />
+                  <span class="channel-name">Other</span>
+                </label>
+              </div>
+
+              <div id="s-otherWrap" class="mt-12" style="display:none">
+                <input type="text" name="channels_other" placeholder="Add another platform…" />
+                <p class="note">e.g., API inbox, custom telephony, region-specific messengers …</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Volume / Systems -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">Estimated monthly lead volume</label>
+              <input type="text" name="volume" placeholder="e.g., 800–1,500" />
+            </div>
+            <div>
+              <label class="label">Systems to integrate (APIs)</label>
+              <input type="text" name="systems" placeholder="CRM, MAP, CDP, Data Warehouse…" />
+            </div>
+          </div>
+
+          <!-- SLA / Compliance -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">SLA & availability requirements</label>
+              <textarea name="sla" placeholder="Response windows, uptime, escalation…"></textarea>
+            </div>
+            <div>
+              <label class="label">Compliance / security notes</label>
+              <textarea name="compliance" placeholder="PII handling, DPA, data residency, approvals…"></textarea>
+            </div>
+          </div>
+
+          <!-- Budget / Notes -->
+          <div class="field-grid mt-12">
+            <div>
+              <label class="label">Budget range (monthly)</label>
+              <select name="budget">
+                <option value="">Select…</option>
+                <option>€10,000–€15,000</option>
+                <option>€15,000–€20,000</option>
+                <option>€20,000–€25,000</option>
+                <option>Custom</option>
+              </select>
+            </div>
+            <div>
+              <label class="label">Anything else?</label>
+              <input type="text" name="notes" placeholder="Deadlines, internal stakeholders, constraints…" />
+            </div>
+          </div>
+
+          <button class="btn btn-primary mt-18" type="submit">Request proposal</button>
+          <p class="note">We’ll respond by email with a detailed proposal & timeline.</p>
+        </form>
+      </div>
     </div>
   </section>
 
   <script>
     const sOther = document.getElementById('s-other');
     const sOtherWrap = document.getElementById('s-otherWrap');
-    if (sOther) sOther.addEventListener('change', () => {
+    if (sOther) sOther.addEventListener('change', ()=> {
       sOtherWrap.style.display = sOther.checked ? 'block' : 'none';
     });
   </script>
