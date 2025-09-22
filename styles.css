@@ -45,7 +45,7 @@ body.bg{
 }
 .nav-inner{display:flex;align-items:center;gap:24px;justify-content:space-between;padding:16px 0}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand-logo{height:28px;display:block}
+.brand-logo{height:32px;display:block}
 .links{display:flex;gap:22px;align-items:center;margin-left:auto}
 .links a{color:#c7d2fe;text-decoration:none}
 .links a:hover{color:#fff}
@@ -246,3 +246,56 @@ body.bg{
 
 /* Sicherheit: Container schneidet alles hart ab */
 .compare { overflow: hidden; border-radius: 18px; }
+/* === Compare: feste Spalten, sauber bündig === */
+.compare{
+  --cmp-cols: 1.5fr 1fr 1fr 1fr;
+}
+.cmp-head, .cmp-row{
+  display:grid;
+  grid-template-columns: var(--cmp-cols);
+  box-sizing:border-box;
+}
+.cmp-head .cell, .cmp-row .cell{
+  padding:14px;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.cmp-head{
+  background:#0e1628;
+  border-bottom:1px solid var(--border);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-weight:800;
+  font-size:12px;
+  color:#a8b3c7;
+}
+.cmp-head .cell{ border-top:none }
+.cmp-row:nth-child(even){ background:rgba(255,255,255,.02) }
+
+/* Spalten-Ausrichtung konsistent */
+.cmp-row .feature, .cmp-head .feature{ text-align:left; color:#c7d2de; font-weight:600 }
+.cmp-row .cell:not(.feature), .cmp-head .cell:not(.feature){ text-align:center; color:#e7ecf7; font-weight:600 }
+
+/* Hover-Konflikt mit .plan fixen (Tabs heben nicht ab) */
+.compare .plan, .compare .plan:hover{
+  background:transparent !important;
+  box-shadow:none !important;
+  transform:none !important;
+  border:0 !important;
+}
+
+/* Mobile: gestapelt, aber sichtbar */
+@media (max-width:640px){
+  .cmp-head{ display:none }
+  .cmp-row{ grid-template-columns:1fr }
+  .cmp-row .feature{
+    background:#0e1628;
+    border-top:none;
+    margin-top:8px;
+    border-radius:12px 12px 0 0;
+    font-weight:700;
+  }
+  .cmp-row .cell:not(.feature){
+    display:flex; justify-content:space-between; gap:12px;
+    background:#0f192b;
+  }
+}
