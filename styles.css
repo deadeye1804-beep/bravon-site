@@ -208,14 +208,41 @@ body.bg{
   .plans-cards{grid-template-columns:repeat(2,1fr)}
   .cmp-head, .cmp-row{grid-template-columns:1.1fr 1fr 1fr 1fr}
 }
+/* === Mobile Compare (stacked) === */
 @media (max-width: 640px){
-  .section{padding:40px 0}
-  .links{display:none}
-  .nav-inner{padding:12px 0}
-  .h1{font-size:34px;line-height:1.15;margin:10px 0 12px}
-  .sub{font-size:15px}
-  .hero-actions{flex-direction:column}
-  .feature-grid,.solutions-grid,.steps{grid-template-columns:1fr}
-  .plans-cards{grid-template-columns:1fr}
-  .compare{display:none} /* Mobil bewusst weggelassen */
+  .compare{ display:block; border-radius:14px; }
+  .cmp-head{ display:none; }                 /* Kopfzeile ausblenden */
+  .cmp-row{
+    grid-template-columns:1fr;               /* jede Zeile untereinander */
+    background: transparent;
+  }
+  .cmp-row .cell{ padding:12px 14px; border-top:1px solid rgba(255,255,255,.06); }
+  .cmp-row .feature{
+    background:#0e1628;                      /* Label-Header der Gruppe */
+    border-top:none;
+    margin-top:8px;
+    border-radius:12px 12px 0 0;
+    font-weight:700;
+  }
+  .cmp-row .cell:not(.feature){
+    display:flex; justify-content:space-between; gap:12px;
+    background:#0f192b;
+  }
 }
+
+/* === FIX: Compare header darf nicht wie Pricing-Karte hovern === */
+.compare .plan {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  border: 0 !important;
+  padding: 14px !important;
+  color: #dbe5ff !important;
+}
+.compare .plan:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Sicherheit: Container schneidet alles hart ab */
+.compare { overflow: hidden; border-radius: 18px; }
