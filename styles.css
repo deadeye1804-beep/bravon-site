@@ -346,4 +346,55 @@ img,video{max-width:100%;height:auto;display:block}
 
 /* 5) Hero bleibt transparent/dunkel (keine helle Fläche) */
 .hero{ background: transparent !important; }
+/* === Bravon Custom Additions === */
+.brand-logo {
+  height: 32px;
+  display: block;
+}
+/* === Pricing Table === */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+.pricing-header, .pricing-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+.pricing-header .col {
+  padding: 20px;
+  background: #1e293b;
+  border: 1px solid #2d3748;
+  font-weight: 600;
+}
+.pricing-header .col span {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: #9ca3af;
+}
+.pricing-header .popular {
+  background: #334155;
+  position: relative;
+}
+.pricing-header .badge {
+  background: #4f8cff;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-top: 6px;
+  display: inline-block;
+}
+.pricing-row .feature {
+  background: #0f172a;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #2d3748;
+}
+.pricing-row .col {
+  padding: 12px;
+  border: 1px solid #2d3748;
+}
 
