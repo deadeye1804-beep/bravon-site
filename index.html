@@ -15,7 +15,8 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
 
-  <link rel="stylesheet" href="/styles.css?v=2025-09-22-premium">
+  <!-- WICHTIG: relative Pfadangabe -->
+  <link rel="stylesheet" href="styles.css?v=2025-09-22-premium3">
 </head>
 <body class="bg">
   <!-- NAV -->
@@ -111,7 +112,7 @@
     </div>
   </section>
 
-  <!-- SOLUTIONS (statt „What we handle“) -->
+  <!-- SOLUTIONS -->
   <section id="solutions" class="section muted">
     <div class="container">
       <h2 class="h2">Solutions that fit your stack</h2>
@@ -171,7 +172,7 @@
     </div>
   </section>
 
-  <!-- PLANS (Premium Cards, kein Tabellen-Look) -->
+  <!-- PLANS -->
   <section id="plans" class="section">
     <div class="container">
       <h2 class="h2">Choose your plan</h2>
@@ -228,12 +229,39 @@
         </article>
       </div>
 
-      <!-- Feature compare (kompakte, wertige Zeile) -->
+      <!-- FINAL: Premium Compare (ruhig, übersichtlich) -->
       <div class="compare">
-        <div class="cmp-item"><span>Lead Processing</span><b>Basic</b><b>Advanced</b><b>Full + Custom</b></div>
-        <div class="cmp-item"><span>Channels</span><b>Email + Web</b><b>+ LinkedIn & WhatsApp</b><b>All + API</b></div>
-        <div class="cmp-item"><span>CRM</span><b>1 CRM</b><b>Multiple</b><b>Custom Routing</b></div>
-        <div class="cmp-item"><span>Support</span><b>Standard</b><b>Priority</b><b>Dedicated</b></div>
+        <div class="cmp-head">
+          <div class="cell feature">Compare features</div>
+          <div class="cell plan">Launch</div>
+          <div class="cell plan">Growth</div>
+          <div class="cell plan">Scale</div>
+        </div>
+
+        <div class="cmp-row">
+          <div class="cell feature">Lead Processing</div>
+          <div class="cell">Basic</div>
+          <div class="cell">Advanced</div>
+          <div class="cell">Full + Custom</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cell feature">Channels</div>
+          <div class="cell">Email + Web</div>
+          <div class="cell">+ LinkedIn & WhatsApp</div>
+          <div class="cell">All + API</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cell feature">CRM Sync</div>
+          <div class="cell">1 CRM</div>
+          <div class="cell">Multiple</div>
+          <div class="cell">Custom Routing</div>
+        </div>
+        <div class="cmp-row">
+          <div class="cell feature">Support</div>
+          <div class="cell">Standard</div>
+          <div class="cell">Priority</div>
+          <div class="cell">Dedicated</div>
+        </div>
       </div>
     </div>
   </section>
