@@ -3,118 +3,181 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bravon – Light Agent Request</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>BravonAi — Get Started</title>
+
+  <meta name="robots" content="noindex,follow" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="styles.css?v=2025-09-22-intake" />
 </head>
 <body class="bg">
   <header class="nav">
     <div class="container nav-inner">
-      <a href="/" class="brand">
-        <span class="brand-dot">⚡</span>
-        <span class="brand-name">Bravon<span class="ai">Ai</span></span>
-     </a>
+      <a href="index.html" class="brand" aria-label="BravonAi Home">
+        <img src="assets/assets/logo.svg" alt="BravonAi Logo" class="brand-logo" />
+      </a>
+      <nav class="links">
+        <a href="index.html#benefits">Benefits</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#timeline">Timeline</a>
+        <a href="index.html#plans">Plans</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="index.html#plans">Pricing</a>
+        <a class="btn btn-primary" href="demo-request.html?plan=growth">Book a Demo</a>
+      </div>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container form-wrap">
-      <div class="form-head">
-        <h1 class="h1">Request your Light Agent</h1>
-        <p class="form-desc">Fill out this quick form and we’ll configure your Light Version Agent.</p>
+  <main class="section">
+    <div class="container" style="max-width:960px">
+      <p class="eyebrow" id="eyebrow">Get Started</p>
+      <h1 class="h1" id="title">Request your BravonAi setup</h1>
+      <p class="sub" id="subtitle">Tell us a few details and we’ll configure your BravonAi agent and integrations.</p>
+
+      <!-- Plan Tabs (optional quick switch) -->
+      <div class="plans-cards" style="grid-template-columns:repeat(3,1fr); margin:14px 0 8px">
+        <button class="plan-tab" data-plan="launch">Launch</button>
+        <button class="plan-tab" data-plan="growth">Growth</button>
+        <button class="plan-tab" data-plan="scale">Scale</button>
       </div>
 
-      <div class="form-card">
-        <form
-  name="demo-request"
-  method="POST"
-  action="/thanks.html"
-  class="form"
-  data-netlify="true"
-  data-netlify-honeypot="hp"
->
-  <!-- Netlify Forms benötigt das Hidden -->
-  <input type="hidden" name="form-name" value="demo-request" />
+      <!-- Netlify-ready form; works auch ohne Netlify -->
+      <form class="form card" id="intake" name="bravon-intake" method="POST" data-netlify="true" action="success.html">
+        <input type="hidden" name="form-name" value="bravon-intake">
+        <input type="hidden" name="plan" id="planField" value="launch">
+        <!-- Honeypot -->
+        <input type="text" name="company_url" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off">
 
-  <!-- Honeypot: im DOM sichtbar für Bots, für Menschen unsichtbar -->
-  <div class="hp-wrap" aria-hidden="true">
-    <label for="hp">Leave this field empty</label>
-    <input id="hp" name="hp" type="text" tabindex="-1" autocomplete="off" />
-  </div>
+        <div class="grid-2">
+          <label>
+            <span>Company</span>
+            <input required name="company" type="text" placeholder="Acme GmbH">
+          </label>
+          <label>
+            <span>Website</span>
+            <input required name="website" type="url" placeholder="https://…">
+          </label>
+        </div>
 
-  <div class="field-grid">
-    <div>
-      <label class="label">Company</label>
-      <input class="input" type="text" name="company" required />
-    </div>
-    <div>
-      <label class="label">Website</label>
-      <input class="input" type="url" name="website" placeholder="https://…" required />
-    </div>
-  </div>
+        <div class="grid-2">
+          <label>
+            <span>Contact email</span>
+            <input required name="email" type="email" placeholder="name@company.com">
+          </label>
+          <label>
+            <span>Contact name (optional)</span>
+            <input name="name" type="text" placeholder="Jane Doe">
+          </label>
+        </div>
 
-  <div class="field-grid mt-12">
-    <div>
-      <label class="label">Contact email</label>
-      <input class="input" type="email" name="email" required />
-    </div>
-    <div>
-      <label class="label">Contact name (optional)</label>
-      <input class="input" type="text" name="contact_name" />
-    </div>
-  </div>
+        <fieldset class="fieldset">
+          <legend>Preferred channels</legend>
+          <div class="grid-2">
+            <label class="check"><input type="checkbox" name="channels" value="Website"> <i></i> Website Widget</label>
+            <label class="check"><input type="checkbox" name="channels" value="Email"> <i></i> Email</label>
+            <label class="check"><input type="checkbox" name="channels" value="WhatsApp"> <i></i> WhatsApp</label>
+            <label class="check"><input type="checkbox" name="channels" value="LinkedIn"> <i></i> LinkedIn</label>
+          </div>
+        </fieldset>
 
-  <div class="field-grid one mt-12">
-    <div>
-      <label class="label">Preferred channels</label>
-      <div class="channel-group">
-        <label class="channel-option">
-          <input type="checkbox" name="channels" value="Website Widget" />
-          <span class="channel-name">Website Widget</span>
+        <div class="grid-2">
+          <label>
+            <span>CRM</span>
+            <select name="crm">
+              <option value="">Select…</option>
+              <option>HubSpot</option>
+              <option>Pipedrive</option>
+              <option>Salesforce</option>
+              <option>None / Other</option>
+            </select>
+          </label>
+          <label>
+            <span>Estimated budget / month</span>
+            <select name="budget">
+              <option value="">Select…</option>
+              <option>€1,500–€3,500</option>
+              <option>€3,500–€7,000</option>
+              <option>€10,000–€25,000</option>
+              <option>Undecided</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <label>
+            <span>Go-live timeline</span>
+            <select name="timeline">
+              <option value="">Select…</option>
+              <option>ASAP (this week)</option>
+              <option>Within 2 weeks</option>
+              <option>This month</option>
+              <option>Later</option>
+            </select>
+          </label>
+          <label>
+            <span>Meeting link (optional)</span>
+            <input name="calendar" type="url" placeholder="https://cal.com/…">
+          </label>
+        </div>
+
+        <label>
+          <span>What should the agent handle?</span>
+          <textarea name="scope" rows="4" placeholder="Short description: FAQs, lead capture, calendar link, tone, qualification rules…"></textarea>
         </label>
-        <label class="channel-option">
-          <input type="checkbox" name="channels" value="WhatsApp" />
-          <span class="channel-name">WhatsApp</span>
-        </label>
-        <label class="channel-option">
-          <input type="checkbox" name="channels" value="Email" />
-          <span class="channel-name">Email</span>
-        </label>
-        <label class="channel-option">
-          <input type="checkbox" name="channels" value="LinkedIn" />
-          <span class="channel-name">LinkedIn</span>
-        </label>
-        <label class="channel-option">
-          <input id="ch-other" type="checkbox" name="channels" value="Other" />
-          <span class="channel-name">Other</span>
-        </label>
-      </div>
 
-      <div id="otherWrap" class="mt-12" style="display:none">
-        <input class="input" type="text" name="channels_other" placeholder="Add another platform…" />
-        <p class="note">e.g., Telegram, WeChat, Instagram DM, custom CRM inbox …</p>
-      </div>
+        <div class="actions">
+          <button class="btn btn-primary">Submit</button>
+          <a class="btn btn-ghost" href="index.html">Back</a>
+        </div>
+      </form>
     </div>
-  </div>
+  </main>
 
-  <div class="field-grid one mt-18">
-    <div>
-      <label class="label">What should the Light Agent handle?</label>
-      <textarea class="input" name="notes" placeholder="Short description: FAQs, basic lead capture, calendar link, tone…"></textarea>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 BravonAi</div>
+      <nav class="footer-links">
+        <a href="index.html#plans">Plans</a>
+        <a href="imprint.html">Imprint</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:info@bravon.it.com">Contact</a>
+      </nav>
     </div>
-  </div>
+  </footer>
 
-  <button class="btn btn-primary mt-18" type="submit">Submit</button>
-  <p class="note">We’ll review and send your access link by email.</p>
-</form>
+  <script>
+    // Plan aus URL übernehmen + UI textlich anpassen
+    const qs = new URLSearchParams(location.search);
+    const plan = (qs.get('plan') || 'launch').toLowerCase();
+    const map = {
+      launch: {
+        title: 'Get started with Launch',
+        sub: 'We’ll configure a Launch plan agent and connect the basics.'
+      },
+      growth: {
+        title: 'Scale with Growth',
+        sub: 'Multi-channel outreach, deeper CRM sync, custom dashboard.'
+      },
+      scale: {
+        title: 'Enterprise Scale',
+        sub: 'Full automation, API integrations, routing and dedicated manager.'
+      }
+    };
+    const cfg = map[plan] || map.launch;
+    document.getElementById('title').textContent = cfg.title;
+    document.getElementById('subtitle').textContent = cfg.sub;
+    document.getElementById('eyebrow').textContent = plan.charAt(0).toUpperCase()+plan.slice(1) + ' plan';
+    document.getElementById('planField').value = plan;
 
-<script>
-  (function () {
-    const other = document.getElementById('ch-other');
-    const wrap  = document.getElementById('otherWrap');
-    if (other && wrap) {
-      wrap.style.display = other.checked ? 'block' : 'none';
-      other.addEventListener('change', () => {
-        wrap.style.display = other.checked ? 'block' : 'none';
+    // Tabs
+    document.querySelectorAll('.plan-tab').forEach(btn=>{
+      if(btn.dataset.plan===plan) btn.classList.add('active');
+      btn.addEventListener('click', ()=>{
+        location.href = `demo-request.html?plan=${btn.dataset.plan}`;
       });
-    }
-  })();
+    });
+  </script>
+</body>
+</html>
